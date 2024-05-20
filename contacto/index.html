@@ -7,12 +7,65 @@
     <meta charset="utf-8">
     </meta>
     <style>
+        .cuerpo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            // height: 100vh; /* (altura de) viewport height? */
+        }
+
+        .alinearAlCentro {
+            width: 50%;
+            text-align: center;
+            background-color: lightgray;
+        }
     </style>
     <link rel="stylesheet" type="text/css" href="template.css">
 </head>
 
 <body>
+<div class="cuerpo">
+	<div class="alinearAlCentro">
     hola mundo!
+</div>
+</div>
+
 </body>
+<script>
+	function quitarTilde(caracter){
+		switch(caracter) {
+			case "á":
+				caracter = "a";
+				break;
+			case "é":
+				caracter = "e";
+				break;
+			case "í":
+				caracter = "i";
+				break;
+			
+			case "ó":
+				caracter = "o";
+				break;
+				
+			case "ú":
+				caracter = ""u;
+				break;
+				
+			case "ü":
+				caracter = "u";
+				break;
+				
+			case "ñ":
+				caracter = "n";
+				break;
+				
+			default:
+			// code block
+		}
+
+	}
+</script>
 
 </html>
