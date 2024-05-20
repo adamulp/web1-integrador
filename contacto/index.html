@@ -7,6 +7,14 @@
     <meta charset="utf-8">
     </meta>
     <style>
+		.frm {
+			display: flex;
+			flex-direction: column;
+			border: 2px solid black;
+		}
+		.error{
+			border: 2px solid red;
+		}
         .cuerpo {
             display: flex;
             flex-direction: column;
@@ -39,7 +47,54 @@
 
 </body>
 <script>
+	let txtNombre = document.getElementById("txtNombre");
+	let txtTel = document.getElementById("txtTel");
+	let ltaErrores = document.getElementById("ltaErrores");
+	let ltaMensajes = document.getElementById("ltaMensajes");
+	
 	function validarFormulario(){
+		ltaErrores.innerHtml = "";
+		txtNombre.classList.remove("error");
+		txtTel.classList.remove("error");
+		let errores = [];
+		let regex_tel = /^[1-9]\d[9]$/;
+		let nombre = txtNombre.value.trim();
+		
+		if(nombre.length == 0){
+			errores.push("Falta el nombre");
+			txtNombre.classList.add("error");
+		} else if(nombre.length > 99){
+			errores.push("Nombre muy largo!");
+			txtNombre.classList.add("error");
+		}
+		
+		if(txtTel.value.length>10){
+			errores.push("Teléfono muy largo");
+			txtTel.classList.add("error");
+		}
+		if(txtTel.value.legth>0 && !regex_tel.test(txtTel.value)){
+			errores.push("Teléfono inválido");
+			txtTel.classList.add("error");
+		}
+		
+		for(let err of errores){
+			let li = document.createElement("li");
+			li.innerHTML = err;
+			ltaErrores.appendChild(li);
+		}
+		if(errores.length == 0){
+			let li = document.createElement("li");
+			if(TxtTel.value.length>0){
+					li.innerHTML = `Hola ${nombre}, bienvenido`;
+			}else{
+				li.innerHTML = `Hola, bienvenido`;
+			}
+			ltaMensajes.appendChild(li);
+			//document.forms[0].reset();
+			return false; // return true para enviar el form;
+		}
+		
+		return false;
 	}
 	
 	function enviarFormulario(){
