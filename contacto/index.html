@@ -39,6 +39,7 @@
 	function enviarFormulario(){
 		validarFormulario();
 		document.forms[0].reset();
+		return false; /* No enviar el formulario */
 	}
 	
 	const normalizarTexto = str =>
