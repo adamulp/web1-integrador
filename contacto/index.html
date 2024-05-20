@@ -33,6 +33,14 @@
 
 </body>
 <script>
+	function validarFormulario(){
+	}
+	
+	function enviarFormulario(){
+		validarFormulario();
+		document.forms[0].reset();
+	}
+	
 	const normalizarTexto = str =>
 		str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 		
