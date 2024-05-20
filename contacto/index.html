@@ -33,6 +33,9 @@
 
 </body>
 <script>
+	const normalizarTexto = str =>
+		str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+		
 	function quitarTilde(caracter){
 		switch(caracter) {
 			case "á":
