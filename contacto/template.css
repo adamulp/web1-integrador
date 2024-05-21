@@ -15,7 +15,8 @@ color: rgb(168, 53, 12);
 margin-bottom: 20px;
 font-size: 50px;
 /*font-size: 4vw; ajusta el tamaño de fuente dependiendo el tamaño de la ventana grafica*/
-
+max-width: 100%;
+word-wrap: break-word;
 }
 
 .contenedor-form{
@@ -25,7 +26,7 @@ font-size: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 30%;
     text-align: center;
-
+    border: 3px solid #d85f5f;
 }
 
 .formulario-contacto ::placeholder{
@@ -47,6 +48,7 @@ border-radius: 4px;
 width: 40%;
 padding: 7px;
 font-size: 20px;
+cursor: pointer;
 }
 
 input{
@@ -63,4 +65,7 @@ width: 80%;
 height: 100px;
 font-family: "Jacquard 12", system-ui;
 font-size: 20px;
+}
+.formulario-contacto #botonEnv:hover{
+    transform: translateY(-2px); /*movimiento del boton cuando pasa el cursor por encima*/
 }
