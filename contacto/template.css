@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
 
 body{
-background-color: black;
+background-color: rgb(156, 150, 150);
 display: flex;
 justify-content: center;
 align-items: center;
@@ -68,4 +68,10 @@ font-size: 20px;
 }
 .formulario-contacto #botonEnv:hover{
     transform: translateY(-2px); /*movimiento del boton cuando pasa el cursor por encima*/
+}
+#hamburger-menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
 }

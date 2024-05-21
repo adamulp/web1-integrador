@@ -22,19 +22,22 @@
     <form>
         <h2>Formulario de contacto</h2>
         <label for="nombre"></label><br>
-        <input type="text" name="nombre" id="n" placeholder="Nombre:"><br>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre:"><br>
         <br>
         <label for="apellido"></label><br>
-        <input type="text" name="apellido" id="ap" placeholder="Apellido:"><br>
+        <input type="text" name="apellido" id="apellido" placeholder="Apellido:"><br>
         <br>
         <label for="mail"></label><br>
-        <input type="text" name="mail" id="ap" placeholder="Email:"><br>
+        <input type="text" name="mail" id="email" placeholder="Email:"><br>
+        <br>
+		<label for="tel"></label><br>
+        <input type="number" name="tel" id="tel" placeholder="Tel:"><br>
         <br>
         <label for="edad"></label><br>
-        <input type="number" name="edad" id="ed" min="1" placeholder="Edad:"><br>
+        <input type="number" name="edad" id="edad" min="1" placeholder="Edad:"><br>
         <br>
         <label for="mensaje"></label><br>
-        <textarea name="mensaje" id="mj" rows="4" cols="50" placeholder="Escriba su mensaje aqui..."></textarea><br>
+        <textarea name="mensaje" id="mensaje" placeholder="Escriba su mensaje aqui..."></textarea><br>
         <br>
         <input type="button" id="botonEnv" value="Enviar">
     </form>
@@ -50,8 +53,8 @@
 	hamburgerMenu.querySelectorAll('rect').forEach(rect => rect.setAttribute('fill', 'black'));
 	});
 	
-	let txtNombre = document.getElementById("txtNombre");
-	let txtTel = document.getElementById("txtTel");
+	let txtNombre = document.getElementById("nombre");
+	let txtTel = document.getElementById("tel");
 	let ltaErrores = document.getElementById("ltaErrores");
 	let ltaMensajes = document.getElementById("ltaMensajes");
 	
