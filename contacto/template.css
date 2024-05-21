@@ -74,4 +74,5 @@ font-size: 20px;
     top: 10px;
     left: 10px;
     cursor: pointer;
+    outline: none; /*para que no se vea el marco cuando se hace foco en el hamb. menu*/
 }

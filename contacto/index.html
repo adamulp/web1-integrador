@@ -1,4 +1,4 @@
-<html>
+<html lang="es">
 
 <head>
     <title>
@@ -40,6 +40,10 @@
         <textarea name="mensaje" id="mensaje" placeholder="Escriba su mensaje aqui..."></textarea><br>
         <br>
         <input type="button" id="botonEnv" value="Enviar">
+
+		<ul id="ltaErrores"></ul>
+		<ul id="ltaMensajes"></ul>
+
     </form>
 </div>
 </div>
@@ -59,11 +63,11 @@
 	let ltaMensajes = document.getElementById("ltaMensajes");
 	
 	function validarFormulario(){
-		ltaErrores.innerHtml = "";
+		ltaErrores.innerHTML = "";
 		txtNombre.classList.remove("error");
 		txtTel.classList.remove("error");
 		let errores = [];
-		let regex_tel = /^[1-9]\d[9]$/;
+		let regex_tel = /^[1-9]\d{9}$/;
 		let nombre = txtNombre.value.trim();
 		
 		if(nombre.length == 0){
@@ -78,7 +82,7 @@
 			errores.push("Teléfono muy largo");
 			txtTel.classList.add("error");
 		}
-		if(txtTel.value.legth>0 && !regex_tel.test(txtTel.value)){
+		if(txtTel.value.length>0 && !regex_tel.test(txtTel.value)){
 			errores.push("Teléfono inválido");
 			txtTel.classList.add("error");
 		}
@@ -90,7 +94,7 @@
 		}
 		if(errores.length == 0){
 			let li = document.createElement("li");
-			if(TxtTel.value.length>0){
+			if(txtTel.value.length>0){
 					li.innerHTML = `Hola ${nombre}, bienvenido`;
 			}else{
 				li.innerHTML = `Hola, bienvenido`;
@@ -102,6 +106,8 @@
 		
 		return false;
 	}
+
+	document.getElementById('botonEnv').addEventListener('click', enviarFormulario);
 	
 	function enviarFormulario(){
 		validarFormulario();
