@@ -28,12 +28,35 @@
             text-align: center;
             background-color: lightgray;
         }
+        
+        #hamburger-menu {
+			cursor: pointer;
+		}
+		
+		#hamburger-menu rect {
+			fill: black;
+			transition: fill 0.4s;
+		}
+		  
+		#hamburger-menu:hover rect,
+		#hamburger-menu:focus rect {
+			fill: blue;
+		}
+		#hamburger-menu:focus-out rect {
+			fill: black;
+		  }
     </style>
     <link rel="stylesheet" type="text/css" href="template.css">
 </head>
 
 <body>
 <div class="cuerpo">
+	<svg id="hamburger-menu" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+	  <rect width="40" height="5" y="5" rx="4" fill="black"></rect>
+	  <rect width="40" height="5" y="15" rx="4" fill="black"></rect>
+	  <rect width="40" height="5" y="25" rx="4" fill="black"></rect>
+	</svg>
+	
 	<div class="alinearAlCentro">
 		
 		<h2>formulario</h2>
@@ -48,6 +71,12 @@
 
 </body>
 <script>
+	const hamburgerMenu = document.getElementById('hamburger-menu');
+
+	hamburgerMenu.addEventListener('blur', () => {
+	hamburgerMenu.querySelectorAll('rect').forEach(rect => rect.setAttribute('fill', 'black'));
+	});
+	
 	let txtNombre = document.getElementById("txtNombre");
 	let txtTel = document.getElementById("txtTel");
 	let ltaErrores = document.getElementById("ltaErrores");
