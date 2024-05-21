@@ -7,12 +7,168 @@
     <meta charset="utf-8">
     </meta>
     <style>
+		.frm {
+			display: flex;
+			flex-direction: column;
+			border: 2px solid black;
+		}
+		.error{
+			border: 2px solid red;
+		}
+        .cuerpo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            // height: 100vh; /* (altura de) viewport height? */
+        }
+
+        .alinearAlCentro {
+            width: 50%;
+            text-align: center;
+            background-color: lightgray;
+        }
+        
+        #hamburger-menu {
+			cursor: pointer;
+		}
+		
+		#hamburger-menu rect {
+			fill: black;
+			transition: fill 0.4s;
+		}
+		  
+		#hamburger-menu:hover rect,
+		#hamburger-menu:focus rect {
+			fill: blue;
+		}
+		#hamburger-menu:focus-out rect {
+			fill: black;
+		  }
     </style>
     <link rel="stylesheet" type="text/css" href="template.css">
 </head>
 
 <body>
-    hola mundo!
+<div class="cuerpo">
+	<svg id="hamburger-menu" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+	  <rect width="40" height="5" y="5" rx="4" fill="black"></rect>
+	  <rect width="40" height="5" y="15" rx="4" fill="black"></rect>
+	  <rect width="40" height="5" y="25" rx="4" fill="black"></rect>
+	</svg>
+	
+	<div class="alinearAlCentro">
+		
+		<h2>formulario</h2>
+		<form class="frm" onsubit="return enviarFormulario()">
+		<label>Nombre*</label> <input id="txtNombre" /><br/>
+		<label>Teléfono</label> <input id="txtTel" /><br/>
+		<button type="submit">Enivar</button>
+		</form>
+		<a href="../index.html">Página Prinicpal</a>
+</div>
+</div>
+
 </body>
+<script>
+	const hamburgerMenu = document.getElementById('hamburger-menu');
+
+	hamburgerMenu.addEventListener('blur', () => {
+	hamburgerMenu.querySelectorAll('rect').forEach(rect => rect.setAttribute('fill', 'black'));
+	});
+	
+	let txtNombre = document.getElementById("txtNombre");
+	let txtTel = document.getElementById("txtTel");
+	let ltaErrores = document.getElementById("ltaErrores");
+	let ltaMensajes = document.getElementById("ltaMensajes");
+	
+	function validarFormulario(){
+		ltaErrores.innerHtml = "";
+		txtNombre.classList.remove("error");
+		txtTel.classList.remove("error");
+		let errores = [];
+		let regex_tel = /^[1-9]\d[9]$/;
+		let nombre = txtNombre.value.trim();
+		
+		if(nombre.length == 0){
+			errores.push("Falta el nombre");
+			txtNombre.classList.add("error");
+		} else if(nombre.length > 99){
+			errores.push("Nombre muy largo!");
+			txtNombre.classList.add("error");
+		}
+		
+		if(txtTel.value.length>10){
+			errores.push("Teléfono muy largo");
+			txtTel.classList.add("error");
+		}
+		if(txtTel.value.legth>0 && !regex_tel.test(txtTel.value)){
+			errores.push("Teléfono inválido");
+			txtTel.classList.add("error");
+		}
+		
+		for(let err of errores){
+			let li = document.createElement("li");
+			li.innerHTML = err;
+			ltaErrores.appendChild(li);
+		}
+		if(errores.length == 0){
+			let li = document.createElement("li");
+			if(TxtTel.value.length>0){
+					li.innerHTML = `Hola ${nombre}, bienvenido`;
+			}else{
+				li.innerHTML = `Hola, bienvenido`;
+			}
+			ltaMensajes.appendChild(li);
+			//document.forms[0].reset();
+			return false; // return true para enviar el form;
+		}
+		
+		return false;
+	}
+	
+	function enviarFormulario(){
+		validarFormulario();
+		document.forms[0].reset();
+		return false; /* No enviar el formulario */
+	}
+	
+	const normalizarTexto = str =>
+		str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+		
+	function quitarTilde(caracter){
+		switch(caracter) {
+			case "á":
+				caracter = "a";
+				break;
+			case "é":
+				caracter = "e";
+				break;
+			case "í":
+				caracter = "i";
+				break;
+			
+			case "ó":
+				caracter = "o";
+				break;
+				
+			case "ú":
+				caracter = ""u;
+				break;
+				
+			case "ü":
+				caracter = "u";
+				break;
+				
+			case "ñ":
+				caracter = "n";
+				break;
+				
+			default:
+			// code block
+		}
+
+	}
+</script>
 
 </html>

@@ -7,12 +7,96 @@
     <meta charset="utf-8">
     </meta>
     <style>
+		
+		header {
+			height: 65px;
+			width: 1150px;
+			background-color: #f8f9fa;
+			display: flex;
+			align-items: center;
+			padding: 0 20px;
+		}
+		
+        .cuerpo {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            //justify-content: center;
+            align-items: center;
+            // height: 100vh; /* (altura de) viewport height? */
+        }
+
+        .alinearAlCentro {
+			height: 800px;
+            width: 1195px;
+            text-align: center;
+            background-color: lightgray;
+        }
+        
+		#hamburger-menu {
+			cursor: pointer;
+		}
+		
+		#hamburger-menu rect {
+			fill: black;
+			transition: fill 0.4s;
+		}
+		  
+		#hamburger-menu:hover rect,
+		#hamburger-menu:focus rect {
+			fill: blue;
+		}
+		#hamburger-menu:focus-out rect {
+			fill: black;
+		}
+		
+		footer {
+			height: 65px;
+			width: 1195px;
+			background-color: #f8f9fa;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			bottom: 0;
+		}
     </style>
     <link rel="stylesheet" type="text/css" href="template.css">
 </head>
 
 <body>
+<div class="cuerpo">
+	<header>
+			<svg id="hamburger-menu" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+			  <rect width="40" height="5" y="5" rx="4" fill="black"></rect>
+			  <rect width="40" height="5" y="15" rx="4" fill="black"></rect>
+			  <rect width="40" height="5" y="25" rx="4" fill="black"></rect>
+			</svg>
+			<h3>Cabecera</h3>
+	</header>
+
+	<div class="alinearAlCentro">
     hola mundo!
+    
+</div>
+
+<footer>
+  <p>
+	<a href="./contacto/index.html">contacto</a>
+  </p>
+</footer>
+
+</div>
+
+
+
 </body>
+<script>
+  const hamburgerMenu = document.getElementById('hamburger-menu');
+
+  hamburgerMenu.addEventListener('blur', () => {
+    hamburgerMenu.querySelectorAll('rect').forEach(rect => rect.setAttribute('fill', 'black'));
+  });
+</script>
 
 </html>
