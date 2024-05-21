@@ -6,46 +6,6 @@
     </title>
     <meta charset="utf-8">
     </meta>
-    <style>
-		.frm {
-			display: flex;
-			flex-direction: column;
-			border: 2px solid black;
-		}
-		.error{
-			border: 2px solid red;
-		}
-        .cuerpo {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            // height: 100vh; /* (altura de) viewport height? */
-        }
-
-        .alinearAlCentro {
-            width: 50%;
-            text-align: center;
-            background-color: lightgray;
-        }
-        
-        #hamburger-menu {
-			cursor: pointer;
-		}
-		
-		#hamburger-menu rect {
-			fill: black;
-			transition: fill 0.4s;
-		}
-		  
-		#hamburger-menu:hover rect,
-		#hamburger-menu:focus rect {
-			fill: blue;
-		}
-		#hamburger-menu:focus-out rect {
-			fill: black;
-		  }
-    </style>
     <link rel="stylesheet" type="text/css" href="template.css">
 </head>
 
@@ -56,18 +16,31 @@
 	  <rect width="40" height="5" y="15" rx="4" fill="black"></rect>
 	  <rect width="40" height="5" y="25" rx="4" fill="black"></rect>
 	</svg>
-	
-	<div class="alinearAlCentro">
-		
-		<h2>formulario</h2>
-		<form class="frm" onsubit="return enviarFormulario()">
-		<label>Nombre*</label> <input id="txtNombre" /><br/>
-		<label>Teléfono</label> <input id="txtTel" /><br/>
-		<button type="submit">Enivar</button>
-		</form>
-		<a href="../index.html">Página Prinicpal</a>
+</div>
+    <div class="contenedor-form">
+        <div class="formulario-contacto">
+    <form>
+        <h2>Formulario de contacto</h2>
+        <label for="nombre"></label><br>
+        <input type="text" name="nombre" id="n" placeholder="Nombre:"><br>
+        <br>
+        <label for="apellido"></label><br>
+        <input type="text" name="apellido" id="ap" placeholder="Apellido:"><br>
+        <br>
+        <label for="mail"></label><br>
+        <input type="text" name="mail" id="ap" placeholder="Email:"><br>
+        <br>
+        <label for="edad"></label><br>
+        <input type="number" name="edad" id="ed" min="1" placeholder="Edad:"><br>
+        <br>
+        <label for="mensaje"></label><br>
+        <textarea name="mensaje" id="mj" rows="4" cols="50" placeholder="Escriba su mensaje aqui..."></textarea><br>
+        <br>
+        <input type="button" id="botonEnv" value="Enviar">
+    </form>
 </div>
 </div>
+
 
 </body>
 <script>

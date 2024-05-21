@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+
+body{
+background-color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+font-family: "Jacquard 12", system-ui;
+}
+
+h2{
+color: rgb(168, 53, 12);
+margin-bottom: 20px;
+font-size: 50px;
+/*font-size: 4vw; ajusta el tamaño de fuente dependiendo el tamaño de la ventana grafica*/
+
+}
+
+.contenedor-form{
+    background-color: rgb(168, 53, 12);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+
+}
+
+.formulario-contacto ::placeholder{
+color: rgb(168, 53, 12);;
+}
+
+.formulario-contacto{
+    padding: 5px 10px;
+    background-color: #000000; 
+    border-radius: 10px; /* Bordes redondeados */
+    border: 2px solid #d85f5f;
+}
+.formulario-contacto #botonEnv{
+margin-bottom: 20px;
+background-color: rgb(168, 53, 12); 
+text-align: center;
+font-family: "Jacquard 12", system-ui;
+border-radius: 4px;
+width: 40%;
+padding: 7px;
+font-size: 20px;
+}
+
+input{
+width: 50%;
+padding: 5px;
+font-family: "Jacquard 12", system-ui;
+font-size: 20px;
+
+}
+
+textarea{
+resize: none;
+width: 80%;
+height: 100px;
+font-family: "Jacquard 12", system-ui;
+font-size: 20px;
+}
