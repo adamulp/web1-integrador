@@ -22,8 +22,8 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="3.255"
-     inkscape:cx="117.2043"
-     inkscape:cy="115.6682"
+     inkscape:cx="15.207373"
+     inkscape:cy="114.74654"
      inkscape:window-width="1920"
      inkscape:window-height="999"
      inkscape:window-x="0"
@@ -34,7 +34,11 @@
      width="200"
      height="200"
      fill="#3d9970"
-     id="rect2" />
+     id="rect2"
+     x="0"
+     y="0"
+     rx="30"
+     ry="30" />
   <text
      x="100.0638"
      y="158.27234"

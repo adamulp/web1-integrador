@@ -29,8 +29,8 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="3.255"
-     inkscape:cx="100"
-     inkscape:cy="100"
+     inkscape:cx="-1.9969278"
+     inkscape:cy="99.078341"
      inkscape:window-width="1920"
      inkscape:window-height="999"
      inkscape:window-x="0"
@@ -41,7 +41,11 @@
      width="200"
      height="200"
      fill="#001f3f"
-     id="rect2" />
+     id="rect2"
+     x="0"
+     y="0"
+     rx="30"
+     ry="30" />
   <circle
      cx="63.214928"
      cy="100.29083"

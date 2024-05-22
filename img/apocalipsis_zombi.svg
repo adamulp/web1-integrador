@@ -4,7 +4,7 @@
    height="200"
    version="1.1"
    id="svg8"
-   sodipodi:docname="zombie_thriller.svg"
+   sodipodi:docname="apocalipsis_zombi.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -22,8 +22,8 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="3.255"
-     inkscape:cx="100"
-     inkscape:cy="100"
+     inkscape:cx="-1.9969278"
+     inkscape:cy="99.078341"
      inkscape:window-width="1920"
      inkscape:window-height="999"
      inkscape:window-x="0"
@@ -34,7 +34,11 @@
      width="200"
      height="200"
      fill="#111111"
-     id="rect2" />
+     id="rect2"
+     x="0"
+     y="0"
+     rx="30"
+     ry="30" />
   <circle
      cx="88.667175"
      cy="88.667175"
