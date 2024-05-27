@@ -7,166 +7,370 @@
     <meta charset="utf-8">
     </meta>
     <style>
-		
-		header {
-			height: 65px;
-			width: 1150px;
-			background-color: #f8f9fa;
-			display: flex;
-			align-items: center;
-			padding: 0 20px;
-		}
-		
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #9C3030;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            flex-wrap: wrap;
+            /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+            /*z-index: 1;*/
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .Hizq {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+        }
+
+        .Hder {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        .iconosH:hover {
+            background-color: rgb(156, 48, 48);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .enlace:hover {
+            background-color: rgb(156, 48, 48);
+            border-radius: 10%;
+            cursor: pointer;
+        }
+
+        h1:hover {
+            background-color: rgb(156, 48, 48);
+            border-radius: 10%;
+            cursor: pointer;
+        }
+
+        .menu-icono:hover,
+        .menu-icono:focus {
+            cursor: pointer;
+            color: rgb(156, 48, 48);
+        }
+
+        .menu-icono:focus-out {
+            fill: black;
+        }
+
+        .menu-enlaces:hover {
+            cursor: pointer;
+            background-color: rgb(156, 48, 48);
+            border-radius: 10%;
+        }
+
+        .menu-icono {
+            display: none;
+            cursor: pointer;
+            font-size: 50px;
+            margin-right: 40px;
+        }
+
+        .menu-icono {
+            fill: black;
+            transition: fill 0.4s;
+        }
+
+        .menu-items {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            width: 25%;
+            background-color: #333;
+            padding: 20px;
+            transition: all 0.3s ease;
+            z-index: 3;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+
+        .menu-items.show {
+            left: 0;
+            display: block;
+        }
+
+        .menu-items ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 25%;
+        }
+
+        .menu-items ul li {
+            margin-bottom: 20px;
+        }
+
+        .menu-items ul li a {
+            color: white;
+            font-size: 20px;
+        }
+
+        .menu-items h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Mostrar el menu de hamburgesa solo cuando se llega a los px */
+        @media screen and (max-width: 768px) {
+            .menu-icono {
+                display: block;
+                /* Bloquear el icono hasta que se llegue al tamaño */
+            }
+
+            .Hder,
+            .Hizq {
+                display: none;
+                /* Resetear el margen */
+            }
+
+            .menu-items {
+                display: none;
+            }
+        }
+
+        .menu-enlaces {
+            padding: 5px;
+            border-radius: 5%;
+        }
+
+        .menu-enlaces h1 {
+            padding: 12px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        a {
+            text-decoration: none;
+            color: #b8aeae;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        .enlace {
+            margin: 35px;
+            font-size: 35px;
+        }
+
+        .iconosH {
+            margin: 7px;
+            height: 45px;
+            width: auto;
+            padding: 5px;
+        }
+
         .cuerpo {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            //justify-content: center;
+            justify-content: center;
             align-items: center;
-            // height: 100vh; /* (altura de) viewport height? */
+            height: 100vh;
+            /* (altura de) viewport height? */
         }
 
         .alinearAlCentro {
-			height: 800px;
+            height: 800px;
             width: 1195px;
             text-align: center;
             background-color: lightgray;
         }
-        
-		#hamburger-menu {
-			cursor: pointer;
-		}
-		
-		#hamburger-menu rect {
-			fill: black;
-			transition: fill 0.4s;
-		}
-		  
-		#hamburger-menu:hover rect,
-		#hamburger-menu:focus rect {
-			fill: blue;
-		}
-		#hamburger-menu:focus-out rect {
-			fill: black;
-		}
-		
-		footer {
-			height: 65px;
-			width: 1195px;
-			background-color: #f8f9fa;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			position: fixed;
-			bottom: 0;
-		}
+
+        /*
+        footer {
+            height: 65px;
+            width: 1195px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            bottom: 0;
+        }
+        */
     </style>
-    <link rel="stylesheet" type="text/css" href="template.css">
+    <link rel="stylesheet" type="text/css" href="carrusel.css">
 </head>
 
 <body>
-<div class="cuerpo">
-	<header>
-			<svg id="hamburger-menu" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" tabindex="0">
-			  <rect width="40" height="5" y="5" rx="4" fill="black"></rect>
-			  <rect width="40" height="5" y="15" rx="4" fill="black"></rect>
-			  <rect width="40" height="5" y="25" rx="4" fill="black"></rect>
-			</svg>
-			<h3>Cabecera</h3>
-	</header>
+    <header>
+        <h1><a href=""><img src="img/JR logo Tam1.ico" alt="JR Juegos">Juegos</a></h1>
+        <div class="Hizq">
+            <ul>
+                <li class="enlace"><a href="">Inicio</a></li>
+                <li class="enlace"><a href="">Artículos</a></li>
+                <li class="enlace"><a href="./contacto/index.html">Contáctenos</a></li>
+            </ul>
+        </div>
+        <div class="Hder">
+            <ul>
+                <li><a href="https://www.whatsapp.com/" target="_blank"><img src="img/whatsapp2.ico"
+                            alt="Icono de whatsapp" class="iconosH"></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.ico"
+                            alt="Icono de instagram" class="iconosH"></a></li>
+                <li><a href="https://www.youtube.com/" target="_blank"><img src="img/youtube.ico" alt="Icono de youtube"
+                            class="iconosH"></a></li>
+            </ul>
+        </div>
+        <div class="menu-icono">&#8801;</div>
+        <div class="menu-items">
+            <h2 class="menu-enlaces"><a href=""><img src="img/JR logo Tam1.ico" alt="JR Juegos">Juegos</a></h2>
 
-	<div class="alinearAlCentro">
-		<div class="contenedor">
-            <button id="anterior" class="flecha flecha-izquierda">
-                <img src="img/flechaIzq.ico" alt="Anterior">
-            </button>
+            <ul>
+                <li><a href="" class="menu-enlaces">Inicio</a></li>
+                <li><a href="" class="menu-enlaces">Artículos</a></li>
+                <li><a href="" class="menu-enlaces">Contáctenos</a></li>
+            </ul>
 
-            <div class="imagenes">
-                <img id="demoIz" class="cont"/>
-                <img id="demoP" class="cont"/>
-                <img id="demoDr" class="cont"/>
+            <div class="menu-btn-enlace">
+                <ul>
+                    <li><a href="https://www.whatsapp.com/" target="_blank"><img src="img/whatsapp2.ico"
+                                alt="Icono de whatsapp" class="iconosH"></a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.ico"
+                                alt="Icono de instagram" class="iconosH"></a></li>
+                    <li><a href="https://www.youtube.com/" target="_blank"><img src="img/youtube.ico"
+                                alt="Icono de youtube" class="iconosH"></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="cuerpo">
+
+
+        <div class="alinearAlCentro">
+            <div class="contenedor">
+                <button id="anterior" class="flecha flecha-izquierda">
+                    <img src="img/flechaIzq.ico" alt="Anterior">
+                </button>
+
+                <div class="imagenes">
+                    <img id="demoIz" class="cont" />
+                    <img id="demoP" class="cont" />
+                    <img id="demoDr" class="cont" />
+                </div>
+
+
+                <button id="siguiente" class="flecha flecha-derecha">
+                    <img src="img/flechaDer.ico" alt="Siguiente">
+                </button>
             </div>
 
-            
-            <button id="siguiente" class="flecha flecha-derecha">
-                <img src="img/flechaDer.ico" alt="Siguiente">
-            </button>
+
+        </div>
+        <!--
+        <footer>
+            <p>
+                <a href="./contacto/index.html">contacto</a>
+            </p>
+        </footer>
+        -->
+
     </div>
-
-    
-</div>
-
-<footer>
-  <p>
-	<a href="./contacto/index.html">contacto</a>
-  </p>
-</footer>
-
-</div>
 
 
 
 </body>
 <script>
-  const hamburgerMenu = document.getElementById('hamburger-menu');
+    const menuIcon = document.querySelector('.menu-icono');
+    const menuItems = document.querySelector('.menu-items');
 
-  hamburgerMenu.addEventListener('blur', () => {
-    hamburgerMenu.querySelectorAll('rect').forEach(rect => rect.setAttribute('fill', 'black'));
-  });
-
-  let unaFoto = document.getElementById("demoIz");
-        let unaFoto2 = document.getElementById("demoP");
-        let unaFoto3 = document.getElementById("demoDr");
+    menuIcon.addEventListener('click', () => {
+        menuItems.classList.toggle('show');
+    });
 
 
-        let imagenes = [
-            "img/apocalipsis_zombi.svg", 
-            "img/ciberCarrera.svg", 
-            "img/exploradores_de_calabozos.svg", 
-            "img/la_defensa_galactica.svg", 
-            "img/las_aventuras_en_el_espacio_exterior.svg", 
-            "img/alfredo.svg"
-        ];
-
-        let indiceActual = 0;
-        let indiceAnt = imagenes.length -1;
-        let indiceSig = 1;
+    let unaFoto = document.getElementById("demoIz");
+    let unaFoto2 = document.getElementById("demoP");
+    let unaFoto3 = document.getElementById("demoDr");
 
 
-        function actualizarImagen() {
-            unaFoto.src = imagenes[indiceAnt];
-            unaFoto2.src = imagenes[indiceActual];
-            unaFoto3.src = imagenes[indiceSig];
-        }
+    let imagenes = [
+        "img/apocalipsis_zombi.svg",
+        "img/ciberCarrera.svg",
+        "img/exploradores_de_calabozos.svg",
+        "img/la_defensa_galactica.svg",
+        "img/las_aventuras_en_el_espacio_exterior.svg",
+        "img/alfredo.svg"
+    ];
 
-        actualizarImagen();
+    let indiceActual = 0;
+    let indiceAnt = imagenes.length - 1;
+    let indiceSig = 1;
 
-        document.getElementById("siguiente").addEventListener("click", function() {
-            indiceAnt = indiceActual;
-            indiceActual++;
-            indiceSig++;
-            if (indiceSig >= imagenes.length){
-                indiceSig = 0;
-            }
-            if (indiceActual >= imagenes.length) {
-        indiceActual = 0;
-        }
-            actualizarImagen();
-        });
-        
-        document.getElementById("anterior").addEventListener("click", function() {
-            indiceSig = indiceActual;
-            indiceActual--;
-            indiceAnt--;
-        if (indiceActual < 0) {
-        indiceActual = imagenes.length - 1;
-        indiceAnt = imagenes.length - 2;
+
+    function actualizarImagen() {
+        unaFoto.src = imagenes[indiceAnt];
+        unaFoto2.src = imagenes[indiceActual];
+        unaFoto3.src = imagenes[indiceSig];
     }
-    if (indiceAnt < 0) {
-        indiceAnt = imagenes.length - 1;
-    }
+
     actualizarImagen();
-        });
+
+    document.getElementById("siguiente").addEventListener("click", function () {
+        indiceAnt = indiceActual;
+        indiceActual++;
+        indiceSig++;
+        if (indiceSig >= imagenes.length) {
+            indiceSig = 0;
+        }
+        if (indiceActual >= imagenes.length) {
+            indiceActual = 0;
+        }
+        actualizarImagen();
+    });
+
+    document.getElementById("anterior").addEventListener("click", function () {
+        indiceSig = indiceActual;
+        indiceActual--;
+        indiceAnt--;
+        if (indiceActual < 0) {
+            indiceActual = imagenes.length - 1;
+            indiceAnt = imagenes.length - 2;
+        }
+        if (indiceAnt < 0) {
+            indiceAnt = imagenes.length - 1;
+        }
+        actualizarImagen();
+    });
 </script>
 
 </html>
