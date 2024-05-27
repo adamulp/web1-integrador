@@ -83,6 +83,16 @@ height: 100px;
 font-family: "Jersey 15", system-ui;
 font-size: 20px;
 }
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+li {
+    margin-left: 20px;
+}
+
+
 .formulario-contacto #botonEnv:hover{
     transform: translateY(-2px); /*movimiento del boton cuando pasa el cursor por encima*/
 }
@@ -97,4 +107,7 @@ font-size: 20px;
     background-color: aliceblue;
     font-family: "Germania One";
     font-size: 20px;
+}
+#listaErrores{
+    color: red;
 }

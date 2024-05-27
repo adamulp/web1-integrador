@@ -48,6 +48,8 @@
             </form>
             <ul id="listaErrores"></ul>
             <ul id="listaMensajes"></ul>
+            <br>
+            <br>
         </div>
     </div>
 
@@ -66,7 +68,9 @@
     });
 
     let txtNombre = document.getElementById("nombre");
+    let txtApellido = document.getElementById("apellido");
     let txtTel = document.getElementById("tel");
+    let txtEdad = document.getElementById("edad");
     let listaErrores = document.getElementById("listaErrores");
     let listaMensajes = document.getElementById("listaMensajes");
 
@@ -77,14 +81,28 @@
         txtTel.classList.remove("error");
         let errores = [];
         let regex_tel = /^[1-9]\d{9}$/;
-        let nombre = txtNombre.value.trim();
 
+        let nombre = txtNombre.value.trim();
         if (nombre.length == 0) {
             errores.push("Falta el nombre");
             txtNombre.classList.add("error");
         } else if (nombre.length > 99) {
             errores.push("Nombre muy largo!");
             txtNombre.classList.add("error");
+        }
+
+        let apellido = txtApellido.value.trim();
+        if (apellido.length == 0) {
+            errores.push("Falta el apellido");
+            txtNombre.classList.add("error");
+        } else if (apellido.length > 99) {
+            errores.push("Apellido muy largo!");
+            txtNombre.classList.add("error");
+        }
+
+        if (txtTel.value.length === 0) {
+            errores.push("Falta el teléfono...");
+            txtTel.classList.add("error");
         }
 
         if (txtTel.value.length > 10) {
@@ -94,6 +112,16 @@
         if (txtTel.value.length > 0 && !regex_tel.test(txtTel.value)) {
             errores.push("Teléfono inválido");
             txtTel.classList.add("error");
+        }
+
+        if (txtEdad.value.length === 0) {
+            errores.push("¡Falta informarnos de tu edad!");
+            txtTel.classList.add("error");
+        } else {
+            if (txtEdad.value < 18) {
+                errores.push("No son juegos para niños :(");
+                txtTel.classList.add("error");
+            }
         }
 
         for (let err of errores) {
