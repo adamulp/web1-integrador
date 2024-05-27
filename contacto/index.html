@@ -6,151 +6,155 @@
     </title>
     <meta charset="utf-8">
     </meta>
-    <link rel="stylesheet" type="text/css" href="template.css">
+    <link rel="stylesheet" type="text/css" href="contacto.css">
 </head>
 
 <body>
-<div class="cuerpo">
-	<svg id="hamburger-menu" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" tabindex="0">
-	  <rect width="40" height="5" y="5" rx="4" fill="black"></rect>
-	  <rect width="40" height="5" y="15" rx="4" fill="black"></rect>
-	  <rect width="40" height="5" y="25" rx="4" fill="black"></rect>
-	</svg>
-</div>
+    <div class="cuerpo">
+        <svg id="hamburger-menu" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"
+            tabindex="0">
+            <rect width="40" height="5" y="5" rx="4" fill="black"></rect>
+            <rect width="40" height="5" y="15" rx="4" fill="black"></rect>
+            <rect width="40" height="5" y="25" rx="4" fill="black"></rect>
+        </svg>
+    </div>
     <div class="contenedor-form">
         <div class="formulario-contacto">
-    <form>
-        <h2>Formulario de contacto</h2>
-        <label for="nombre"></label><br>
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre:"><br>
-        <br>
-        <label for="apellido"></label><br>
-        <input type="text" name="apellido" id="apellido" placeholder="Apellido:"><br>
-        <br>
-        <label for="mail"></label><br>
-        <input type="text" name="mail" id="email" placeholder="Email:"><br>
-        <br>
-		<label for="tel"></label><br>
-        <input type="number" name="tel" id="tel" placeholder="Tel:"><br>
-        <br>
-        <label for="edad"></label><br>
-        <input type="number" name="edad" id="edad" min="1" placeholder="Edad:"><br>
-        <br>
-        <label for="mensaje"></label><br>
-        <textarea name="mensaje" id="mensaje" placeholder="Escriba su mensaje aqui..."></textarea><br>
-        <br>
-        <input type="button" id="botonEnv" value="Enviar">
+            <form class="formulario" onsubmit="return validarFormulario()">
+                <h2>Formulario de contacto</h2>
+                <label for="nombre"></label><br>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre:"><br>
+                <br>
+                <label for="apellido"></label><br>
+                <input type="text" name="apellido" id="apellido" placeholder="Apellido:"><br>
+                <br>
+                <label for="mail"></label><br>
+                <input type="text" name="mail" id="email" placeholder="Email:"><br>
+                <br>
+                <label for="tel"></label><br>
+                <input type="number" name="tel" id="tel" placeholder="Tel:"><br>
+                <br>
+                <label for="edad"></label><br>
+                <input type="number" name="edad" id="edad" min="1" placeholder="Edad:"><br>
+                <br>
+                <label for="mensaje"></label><br>
+                <textarea name="mensaje" id="mensaje" placeholder="Escriba su mensaje aqui..."></textarea><br>
+                <br>
+                <input type="submit" id="botonEnv" value="Enviar">
 
-		<ul id="ltaErrores"></ul>
-		<ul id="ltaMensajes"></ul>
+                <ul id="listaErrores"></ul>
+                <ul id="listaMensajes"></ul>
 
-    </form>
-</div>
-</div>
+            </form>
+            <ul id="listaErrores"></ul>
+            <ol id="listaMensajes"></ol>
+        </div>
+    </div>
 
 
 </body>
 <script>
-	const hamburgerMenu = document.getElementById('hamburger-menu');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
 
-	hamburgerMenu.addEventListener('blur', () => {
-	hamburgerMenu.querySelectorAll('rect').forEach(rect => rect.setAttribute('fill', 'black'));
-	});
-	
-	let txtNombre = document.getElementById("nombre");
-	let txtTel = document.getElementById("tel");
-	let ltaErrores = document.getElementById("ltaErrores");
-	let ltaMensajes = document.getElementById("ltaMensajes");
-	
-	function validarFormulario(){
-		ltaErrores.innerHTML = "";
-		txtNombre.classList.remove("error");
-		txtTel.classList.remove("error");
-		let errores = [];
-		let regex_tel = /^[1-9]\d{9}$/;
-		let nombre = txtNombre.value.trim();
-		
-		if(nombre.length == 0){
-			errores.push("Falta el nombre");
-			txtNombre.classList.add("error");
-		} else if(nombre.length > 99){
-			errores.push("Nombre muy largo!");
-			txtNombre.classList.add("error");
-		}
-		
-		if(txtTel.value.length>10){
-			errores.push("Teléfono muy largo");
-			txtTel.classList.add("error");
-		}
-		if(txtTel.value.length>0 && !regex_tel.test(txtTel.value)){
-			errores.push("Teléfono inválido");
-			txtTel.classList.add("error");
-		}
-		
-		for(let err of errores){
-			let li = document.createElement("li");
-			li.innerHTML = err;
-			ltaErrores.appendChild(li);
-		}
-		if(errores.length == 0){
-			let li = document.createElement("li");
-			if(txtTel.value.length>0){
-					li.innerHTML = `Hola ${nombre}, bienvenido`;
-			}else{
-				li.innerHTML = `Hola, bienvenido`;
-			}
-			ltaMensajes.appendChild(li);
-			//document.forms[0].reset();
-			return false; // return true para enviar el form;
-		}
-		
-		return false;
-	}
+    hamburgerMenu.addEventListener('blur', () => {
+        hamburgerMenu.querySelectorAll('rect').forEach(rect => rect.setAttribute('fill', 'black'));
+    });
 
-	document.getElementById('botonEnv').addEventListener('click', enviarFormulario);
-	
-	function enviarFormulario(){
-		validarFormulario();
-		document.forms[0].reset();
-		return false; /* No enviar el formulario */
-	}
-	
-	const normalizarTexto = str =>
-		str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-		
-	function quitarTilde(caracter){
-		switch(caracter) {
-			case "á":
-				caracter = "a";
-				break;
-			case "é":
-				caracter = "e";
-				break;
-			case "í":
-				caracter = "i";
-				break;
-			
-			case "ó":
-				caracter = "o";
-				break;
-				
-			case "ú":
-				caracter = ""u;
-				break;
-				
-			case "ü":
-				caracter = "u";
-				break;
-				
-			case "ñ":
-				caracter = "n";
-				break;
-				
-			default:
-			// code block
-		}
+    let txtNombre = document.getElementById("nombre");
+    let txtTel = document.getElementById("tel");
+    let listaErrores = document.getElementById("listaErrores");
+    let listaMensajes = document.getElementById("listaMensajes");
 
-	}
+    function validarFormulario() {
+        listaErrores.innerHTML = "";
+        txtNombre.classList.remove("error");
+        txtTel.classList.remove("error");
+        let errores = [];
+        let regex_tel = /^[1-9]\d{9}$/;
+        let nombre = txtNombre.value.trim();
+
+        if (nombre.length == 0) {
+            errores.push("Falta el nombre");
+            txtNombre.classList.add("error");
+        } else if (nombre.length > 99) {
+            errores.push("Nombre muy largo!");
+            txtNombre.classList.add("error");
+        }
+
+        if (txtTel.value.length > 10) {
+            errores.push("Teléfono muy largo");
+            txtTel.classList.add("error");
+        }
+        if (txtTel.value.length > 0 && !regex_tel.test(txtTel.value)) {
+            errores.push("Teléfono inválido");
+            txtTel.classList.add("error");
+        }
+
+        for (let err of errores) {
+            let li = document.createElement("li");
+            li.innerHTML = err;
+            listaErrores.appendChild(li);
+        }
+        if (errores.length == 0) {
+            let li = document.createElement("li");
+            if (txtTel.value.length > 0) {
+                li.innerHTML = `Hola ${nombre}, bienvenido`;
+            } else {
+                li.innerHTML = `Hola, bienvenido`;
+            }
+            listaMensajes.appendChild(li);
+            //document.forms[0].reset();
+            return false; // return true para enviar el form;
+        }
+
+        return false;
+    }
+
+    document.getElementById('botonEnv').addEventListener('click', enviarFormulario);
+
+    function enviarFormulario() {
+        validarFormulario();
+        document.forms[0].reset();
+        return false; /* No enviar el formulario */
+    }
+
+    const normalizarTexto = str =>
+        str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    function quitarTilde(caracter) {
+        switch (caracter) {
+            case "á":
+                caracter = "a";
+                break;
+            case "é":
+                caracter = "e";
+                break;
+            case "í":
+                caracter = "i";
+                break;
+
+            case "ó":
+                caracter = "o";
+                break;
+
+            case "ú":
+                caracter = "u";
+                break;
+
+            case "ü":
+                caracter = "u";
+                break;
+
+            case "ñ":
+                caracter = "n";
+                break;
+
+            default:
+                normalizarTexto(caracter);
+                break;
+        }
+
+    }
 </script>
 
 </html>

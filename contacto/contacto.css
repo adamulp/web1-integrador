@@ -1,4 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 body{
 background-color: rgb(156, 150, 150);
@@ -7,11 +21,11 @@ justify-content: center;
 align-items: center;
 height: 100vh;
 margin: 0;
-font-family: "Jacquard 12", system-ui;
+font-family: "Germania One", system-ui;
 }
 
 h2{
-color: rgb(168, 53, 12);
+color: #d6d5ec;
 margin-bottom: 20px;
 font-size: 50px;
 /*font-size: 4vw; ajusta el tamaño de fuente dependiendo el tamaño de la ventana grafica*/
@@ -20,30 +34,33 @@ word-wrap: break-word;
 }
 
 .contenedor-form{
-    background-color: rgb(168, 53, 12);
+    background-color: rgb(7, 1, 14);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 30%;
     text-align: center;
-    border: 3px solid #d85f5f;
+    border: 3px solid #3a0808;
+    /*border: 3px solid #d85f5f;*/
 }
 
 .formulario-contacto ::placeholder{
-color: rgb(168, 53, 12);;
+color: #7e08ea;
 }
 
 .formulario-contacto{
     padding: 5px 10px;
-    background-color: #000000; 
+    background-color: #32323b; 
     border-radius: 10px; /* Bordes redondeados */
-    border: 2px solid #d85f5f;
+    border: 2px solid #18181a;
+    /*border: 2px solid #d85f5f;*/
 }
 .formulario-contacto #botonEnv{
 margin-bottom: 20px;
-background-color: rgb(168, 53, 12); 
+background-color: #1a725f;
+color:aliceblue;
 text-align: center;
-font-family: "Jacquard 12", system-ui;
+font-family: "Germania One", system-ui;
 border-radius: 4px;
 width: 40%;
 padding: 7px;
@@ -54,7 +71,7 @@ cursor: pointer;
 input{
 width: 50%;
 padding: 5px;
-font-family: "Jacquard 12", system-ui;
+font-family: "Jersey 15", system-ui;
 font-size: 20px;
 
 }
@@ -63,7 +80,7 @@ textarea{
 resize: none;
 width: 80%;
 height: 100px;
-font-family: "Jacquard 12", system-ui;
+font-family: "Jersey 15", system-ui;
 font-size: 20px;
 }
 .formulario-contacto #botonEnv:hover{
