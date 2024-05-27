@@ -55,9 +55,9 @@
 
 
 </body>
-<!--
+
 <script src="test.js"></script>
--->
+<!---->
 
 <script>
 
@@ -118,7 +118,7 @@
             errores.push("¡Falta informarnos de tu edad!");
             txtTel.classList.add("error");
         } else {
-            if (txtEdad.value < 18) {
+            if (parseInt(txtEdad.value) < 18) {
                 errores.push("No son juegos para niños :(");
                 txtTel.classList.add("error");
             }
