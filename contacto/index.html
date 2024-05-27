@@ -171,6 +171,26 @@
         return false; /* No enviar el formulario */
     }
 
+    function chequearNombre(texto) {
+
+        let textoNormalizado = "";
+        let regex_abc_ansi = /^[A-Za-z]+$/;
+
+        for (let i = 0; i < texto.length; i++) {
+            let letra = quitarTilde(texto[i]);
+            textoNormalizado += letra;
+        }
+
+        if (regex_abc_ansi.test(textoNormalizado)) {
+            console.log("El texto solo contiene caracteres del abecedario romano.");
+            return true;
+        } else {
+            console.log("El texto contiene caracteres que no son del abecedario romano.");
+            return false;
+        }
+
+    }
+
     const normalizarTexto = str =>
         str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
