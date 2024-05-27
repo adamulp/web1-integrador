@@ -76,7 +76,23 @@
 	</header>
 
 	<div class="alinearAlCentro">
-    hola mundo!
+		<div class="contenedor">
+            <button id="anterior" class="flecha flecha-izquierda">
+                <img src="img/flechaIzq.ico" alt="Anterior">
+            </button>
+
+            <div class="imagenes">
+                <img id="demoIz" class="cont"/>
+                <img id="demoP" class="cont"/>
+                <img id="demoDr" class="cont"/>
+            </div>
+
+            
+            <button id="siguiente" class="flecha flecha-derecha">
+                <img src="img/flechaDer.ico" alt="Siguiente">
+            </button>
+    </div>
+
     
 </div>
 
@@ -97,6 +113,60 @@
   hamburgerMenu.addEventListener('blur', () => {
     hamburgerMenu.querySelectorAll('rect').forEach(rect => rect.setAttribute('fill', 'black'));
   });
+
+  let unaFoto = document.getElementById("demoIz");
+        let unaFoto2 = document.getElementById("demoP");
+        let unaFoto3 = document.getElementById("demoDr");
+
+
+        let imagenes = [
+            "img/apocalipsis_zombi.svg", 
+            "img/ciberCarrera.svg", 
+            "img/exploradores_de_calabozos.svg", 
+            "img/la_defensa_galactica.svg", 
+            "img/las_aventuras_en_el_espacio_exterior.svg", 
+            "img/alfredo.svg"
+        ];
+
+        let indiceActual = 0;
+        let indiceAnt = imagenes.length -1;
+        let indiceSig = 1;
+
+
+        function actualizarImagen() {
+            unaFoto.src = imagenes[indiceAnt];
+            unaFoto2.src = imagenes[indiceActual];
+            unaFoto3.src = imagenes[indiceSig];
+        }
+
+        actualizarImagen();
+
+        document.getElementById("siguiente").addEventListener("click", function() {
+            indiceAnt = indiceActual;
+            indiceActual++;
+            indiceSig++;
+            if (indiceSig >= imagenes.length){
+                indiceSig = 0;
+            }
+            if (indiceActual >= imagenes.length) {
+        indiceActual = 0;
+        }
+            actualizarImagen();
+        });
+        
+        document.getElementById("anterior").addEventListener("click", function() {
+            indiceSig = indiceActual;
+            indiceActual--;
+            indiceAnt--;
+        if (indiceActual < 0) {
+        indiceActual = imagenes.length - 1;
+        indiceAnt = imagenes.length - 2;
+    }
+    if (indiceAnt < 0) {
+        indiceAnt = imagenes.length - 1;
+    }
+    actualizarImagen();
+        });
 </script>
 
 </html>

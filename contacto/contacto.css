@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body{
+background-color: rgb(156, 150, 150);
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+font-family: "Germania One", system-ui;
+}
+
+h2{
+color: #d6d5ec;
+margin-bottom: 20px;
+font-size: 50px;
+/*font-size: 4vw; ajusta el tamaño de fuente dependiendo el tamaño de la ventana grafica*/
+max-width: 100%;
+word-wrap: break-word;
+}
+
+.contenedor-form{
+    background-color: rgb(7, 1, 14);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    border: 3px solid #3a0808;
+    /*border: 3px solid #d85f5f;*/
+}
+
+.formulario-contacto ::placeholder{
+color: #7e08ea;
+}
+
+.formulario-contacto{
+    padding: 5px 10px;
+    background-color: #32323b; 
+    border-radius: 10px; /* Bordes redondeados */
+    border: 2px solid #18181a;
+    /*border: 2px solid #d85f5f;*/
+}
+.formulario-contacto #botonEnv{
+margin-bottom: 20px;
+background-color: #1a725f;
+color:aliceblue;
+text-align: center;
+font-family: "Germania One", system-ui;
+border-radius: 4px;
+width: 40%;
+padding: 7px;
+font-size: 20px;
+cursor: pointer;
+}
+
+input{
+width: 50%;
+padding: 5px;
+font-family: "Jersey 15", system-ui;
+font-size: 20px;
+
+}
+
+textarea{
+resize: none;
+width: 80%;
+height: 100px;
+font-family: "Jersey 15", system-ui;
+font-size: 20px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+li {
+    margin-left: 20px;
+}
+
+
+.formulario-contacto #botonEnv:hover{
+    transform: translateY(-2px); /*movimiento del boton cuando pasa el cursor por encima*/
+}
+#hamburger-menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    outline: none; /*para que no se vea el marco cuando se hace foco en el hamb. menu*/
+}
+#enlace-encuesta{
+    background-color: aliceblue;
+    font-family: "Germania One";
+    font-size: 20px;
+}
+#listaErrores{
+    color: red;
+}
