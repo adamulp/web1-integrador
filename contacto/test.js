@@ -1,6 +1,12 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-    const testButton = document.getElementById('testButton');
+    const form = document.getElementById('frmContacto');
+    // const testButton = document.getElementById('testButton');
+    // Create a new button element
+    const testButton = document.createElement('button');
+    testButton.textContent = 'Test';
+    //form.innerHTML = '<button id="testButton">Test</button>' + form.innerHTML;
+    form.insertBefore(testButton, form.firstChild);
 
     // Listas de nombres y apellidos comunes en Argentina
     const nombres = ['Juan', 'María', 'Carlos', 'Ana', 'José', 'Laura', 'Pedro', 'Lucía', 'Luis', 'Sofía'];
