@@ -20,8 +20,10 @@
     </div>
     <div class="contenedor-form">
         <div class="formulario-contacto">
-            <form class="formulario" onsubmit="return validarFormulario()">
+            <form id="contacto" class="formulario" onsubmit="return validarFormulario()">
                 <h2>Formulario de contacto</h2>
+                <button type="button" id="testButton">Test</button>
+                <br>
                 <label for="nombre"></label><br>
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre:"><br>
                 <br>
@@ -29,7 +31,7 @@
                 <input type="text" name="apellido" id="apellido" placeholder="Apellido:"><br>
                 <br>
                 <label for="mail"></label><br>
-                <input type="text" name="mail" id="email" placeholder="Email:"><br>
+                <input type="text" name="mail" id="mail" placeholder="Email:"><br>
                 <br>
                 <label for="tel"></label><br>
                 <input type="number" name="tel" id="tel" placeholder="Tel:"><br>
@@ -40,20 +42,20 @@
                 <label for="mensaje"></label><br>
                 <textarea name="mensaje" id="mensaje" placeholder="Escriba su mensaje aqui..."></textarea><br>
                 <br>
+                <br>
                 <input type="submit" id="botonEnv" value="Enviar">
-
-                <ul id="listaErrores"></ul>
-                <ul id="listaMensajes"></ul>
-
+                <br />
             </form>
             <ul id="listaErrores"></ul>
-            <ol id="listaMensajes"></ol>
+            <ul id="listaMensajes"></ul>
         </div>
     </div>
 
 
 </body>
+<script src="test.js"></script>
 <script>
+
     const hamburgerMenu = document.getElementById('hamburger-menu');
 
     hamburgerMenu.addEventListener('blur', () => {
@@ -67,6 +69,7 @@
 
     function validarFormulario() {
         listaErrores.innerHTML = "";
+        listaMensajes.innerHTML = "";
         txtNombre.classList.remove("error");
         txtTel.classList.remove("error");
         let errores = [];
@@ -97,24 +100,43 @@
         }
         if (errores.length == 0) {
             let li = document.createElement("li");
+            let anchor = document.createElement('a');
+            anchor.href = '../encuesta.html';
+            anchor.textContent = 'Realizar una encuesta';
+            li.appendChild(anchor);
+            li.id = 'enlace-encuesta';
+
+            /*
             if (txtTel.value.length > 0) {
                 li.innerHTML = `Hola ${nombre}, bienvenido`;
             } else {
                 li.innerHTML = `Hola, bienvenido`;
             }
+            */
             listaMensajes.appendChild(li);
             //document.forms[0].reset();
+            //encuestaOnSubmit();
             return false; // return true para enviar el form;
         }
 
         return false;
     }
 
-    document.getElementById('botonEnv').addEventListener('click', enviarFormulario);
+    function encuestaOnSubmit() {
+        const decision = document.querySelector('input[name="decision"]:checked').value;
+        if (decision === 'si') {
+            window.location.href = 'encuesta.html'; // Página de la encuesta
+        } else {
+            window.location.href = 'page.html'; // Página principal
+        }
+    }
+
+    //document.getElementById('botonEnv').addEventListener('click', enviarFormulario);
 
     function enviarFormulario() {
         validarFormulario();
-        document.forms[0].reset();
+        //document.forms[0].reset();
+        //encuestaOnSubmit();
         return false; /* No enviar el formulario */
     }
 

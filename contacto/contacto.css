@@ -93,3 +93,8 @@ font-size: 20px;
     cursor: pointer;
     outline: none; /*para que no se vea el marco cuando se hace foco en el hamb. menu*/
 }
+#enlace-encuesta{
+    background-color: aliceblue;
+    font-family: "Germania One";
+    font-size: 20px;
+}
