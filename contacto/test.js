@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function generarDatosAleatorios() {
         const nombreAleatorio = nombres[obtenerIndiceAleatorio(nombres.length)];
         const apellidoAleatorio = apellidos[obtenerIndiceAleatorio(apellidos.length)];
-        const emailAleatorio = `user${Math.floor(Math.random() * 1000)}@ejemplo.com`;
+        const emailAleatorio = `user${Math.floor(Math.random() * 1000)}@example.com`;
         const telefonoAleatorio = Math.floor(Math.random() * 9999999999).toString();
         const edadAleatoria = Math.floor(Math.random() * 60) + 18; // Edad entre 18 y 78
         const mensajeAleatorio = `Este es un mensaje de prueba ${Math.floor(Math.random() * 1000)}`;
