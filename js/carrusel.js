@@ -34,18 +34,6 @@ urlMap.set('la_defensa_galactica.svg', 'La_Defensa_Galactica');
 urlMap.set('las_aventuras_en_el_espacio_exterior.svg', 'Las_Aventuras_en_el_Espacio_Esterior');
 
 
-
-/*
-let urlMap = {};
-urlMap['apocalipsis_zombi.svg'] = './Apocalipsis_Zombi/';
-urlMap['alfredo.svg'] = './Alfredo/';
-urlMap['ciberCarrera.svg'] = './CiberCarrera/';
-urlMap['exploradores_de_calabozos.svg'] = './Exploradores_De_Calabazos/';
-urlMap['la_defensa_galactica.svg'] = './La_Defensa_Galactica/';
-urlMap['las_aventuras_en_el_espacio_exterior.svg'] = './Las_Aventuras_en_el_Espacio_Esterior/';
-*/
-
-
 function actualizarImagen() {
     let svg_path = './juegos/' + urlMap.get(imagenes[indiceActual]) + '/';
     
@@ -114,21 +102,3 @@ function agregarEnlace(idImagen, url) {
       parent.parentNode.removeChild(parent);
     }
   }
-
-  /*
-let svg_name_to_id_map = {};
-svg_name_to_id_map['apocalipsis_zombi.svg'] = 'apocalipsisZombi';
-svg_name_to_id_map['alfredo.svg'] = 'alfredo';
-svg_name_to_id_map['ciberCarrera.svg'] = 'ciberCarrera';
-svg_name_to_id_map['exploradores_de_calabozos.svg'] = 'exploradores';
-svg_name_to_id_map['la_defensa_galactica.svg'] = 'defensaGalactica';
-svg_name_to_id_map['las_aventuras_en_el_espacio_exterior.svg'] = 'aventurasEspacio';
-
-const svg_id_to_url_map = {};
-svg_id_to_url_map['apocalipsisZombi'] = './Apocalipsis_Zombi/';
-svg_id_to_url_map['alfredo'] = './Alfredo/';
-svg_id_to_url_map['ciberCarrera'] = './CiberCarrera/';
-svg_id_to_url_map['exploradores'] = './Exploradores_De_Calabazos/';
-svg_id_to_url_map['defensaGalactica'] = './La_Defensa_Galactica/';
-svg_id_to_url_map['aventurasEspacio'] = './Las_Aventuras_en_el_Espacio_Esterior/';
-*/
