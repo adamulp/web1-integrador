@@ -14,7 +14,29 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+input{
+    width: 50%;
+    padding: 5px;
+    font-family: "Jersey 15", system-ui;
+    font-size: 20px;
+    
+}
 
+textarea{
+resize: none;
+width: 80%;
+height: 100px;
+font-family: "Jersey 15", system-ui;
+font-size: 20px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    }
+li {
+    margin-left: 20px;
+}
 
 h2{
 color: #d6d5ec;
@@ -23,6 +45,10 @@ font-size: 50px;
 /*font-size: 4vw; ajusta el tamaño de fuente dependiendo el tamaño de la ventana grafica*/
 max-width: 100%;
 word-wrap: break-word;
+}
+
+.error {
+    border: 2px solid red;
 }
 
 .contenedor-envoltura{
@@ -74,29 +100,7 @@ font-size: 20px;
 cursor: pointer;
 }
 
-input{
-width: 50%;
-padding: 5px;
-font-family: "Jersey 15", system-ui;
-font-size: 20px;
 
-}
-
-textarea{
-resize: none;
-width: 80%;
-height: 100px;
-font-family: "Jersey 15", system-ui;
-font-size: 20px;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-li {
-    margin-left: 20px;
-}
 
 
 .formulario-contacto #botonEnv:hover{

@@ -38,10 +38,10 @@ function validarFormulario() {
     let apellido = txtApellido.value.trim();
     if (apellido.length == 0) {
         errores.push("Falta el apellido");
-        txtNombre.classList.add("error");
+        txtApellido.classList.add("error");
     } else if (apellido.length > 99) {
         errores.push("Apellido muy largo!");
-        txtNombre.classList.add("error");
+        txtApellido.classList.add("error");
     }
 
     if (txtTel.value.length === 0) {
@@ -60,11 +60,11 @@ function validarFormulario() {
 
     if (txtEdad.value.length === 0) {
         errores.push("¡Falta informarnos de tu edad!");
-        txtTel.classList.add("error");
+        txtEdad.classList.add("error");
     } else {
         if (parseInt(txtEdad.value) < 18) {
             errores.push("No son juegos para niños :(");
-            txtTel.classList.add("error");
+            txtEdad.classList.add("error");
         }
     }
 
