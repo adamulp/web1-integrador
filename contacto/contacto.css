@@ -121,3 +121,6 @@ cursor: pointer;
 #listaErrores{
     color: red;
 }
+.etiquetaError{
+    color:red;
+}

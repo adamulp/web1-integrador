@@ -18,21 +18,58 @@ function disableFormInputs() {
     }
 }
 
+function setErrorLabel(idEtiqueta, textoEtiqueta){
+    if(idEtiqueta){
+        let etiqueta = document.getElementById(idEtiqueta);
+        etiqueta.textContent = textoEtiqueta;
+    }else{
+        console.log("El campo no existe");
+    }
+}
+
+function quitarLabel(campo){
+    if(campo){
+        //let etiqueta = document.querySelector('label[for="' + campo.id + '"]');
+        let etiqueta = document.getElementsByClassName(campo.id);
+                
+        if (etiqueta) {
+            etiqueta.textContent = "";
+            console.log("se quiso eliminar");
+        }
+    }else{
+        console.log("El campo no existe");
+    }
+}
+
+function quitarFormLabels() {
+    let form = document.getElementById('frmContacto');
+    let etiquetas = form.getElementsByClassName("etiquetaError");
+
+    for (let i = 0; i < etiquetas.length; i++) {
+        let etiqueta = etiquetas[i];
+        etiqueta.textContent = "";
+    }
+}
+
 function validarFormulario() {
     listaErrores.innerHTML = "";
     listaMensajes.innerHTML = "";
     txtNombre.classList.remove("error");
     txtTel.classList.remove("error");
+    quitarFormLabels();
     let errores = [];
     let regex_tel = /^[1-9]\d{9}$/;
-
+//setErrorLabel(campo, textoEtiqueta)
     let nombre = txtNombre.value.trim();
+
     if (nombre.length == 0) {
         errores.push("Falta el nombre");
         txtNombre.classList.add("error");
+        setErrorLabel("nombreError", "Nombre");
     } else if (nombre.length > 99) {
         errores.push("Nombre muy largo!");
         txtNombre.classList.add("error");
+        setErrorLabel("nombreError", "Nombre");
     }
 
     let apellido = txtApellido.value.trim();

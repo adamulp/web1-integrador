@@ -62,28 +62,27 @@
             <div class="formulario-contacto">
                 <h2>Formulario de contacto</h2>
                 <form id="frmContacto" class="formulario" onsubmit="return validarFormulario()">
-
                     <br>
-                    <label for="nombre"></label><br>
+                    <label for="nombre" class="etiquetaError" id="nombreError"></label><br>
                     <input type="text" name="nombre" id="nombre" placeholder="Nombre:"><br>
                     <br>
-                    <label for="apellido"></label><br>
+                    <label for="apellido" class="etiquetaError" id="apellidoError"></label><br>
                     <input type="text" name="apellido" id="apellido" placeholder="Apellido:"><br>
                     <br>
-                    <label for="mail"></label><br>
+                    <label for="mail" class="etiquetaError" id="mailError"></label><br>
                     <input type="text" name="mail" id="mail" placeholder="Email:"><br>
                     <br>
-                    <label for="tel"></label><br>
+                    <label for="tel" class="etiquetaError" id="telError"></label><br>
                     <input type="number" name="tel" id="tel" placeholder="Tel:"><br>
                     <br>
-                    <label for="edad"></label><br>
+                    <label for="edad" class="etiquetaError" id="edadError"></label><br>
                     <input type="number" name="edad" id="edad" min="1" placeholder="Edad:"><br>
                     <br>
-                    <label for="mensaje"></label><br>
+                    <label for="mensaje" class="etiquetaError" id="mensajeError"></label><br>
                     <textarea name="mensaje" id="mensaje" placeholder="Escriba su mensaje aqui..."></textarea><br>
                     <br>
                     <br>
-                    <input type="submit" id="botonEnv" value="Enviar">
+                    <input type="submit" class="botonEnv" value="Enviar">
                     <br />
                 </form>
                 <ul id="listaErrores"></ul>
