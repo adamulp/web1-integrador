@@ -1,11 +1,3 @@
-const menuIcon = document.querySelector('.menu-icono');
-const menuItems = document.querySelector('.menu-items');
-
-menuIcon.addEventListener('click', () => {
-    menuItems.classList.toggle('show');
-});
-
-
 let imagenIzquierda = document.getElementById("demoIz");
 let imagenCentro = document.getElementById("demoP");
 let imagenDerecha = document.getElementById("demoDr");
