@@ -14,15 +14,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-body{
-background-color: rgb(156, 150, 150);
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-margin: 0;
-font-family: "Germania One", system-ui;
-}
+
 
 h2{
 color: #d6d5ec;
@@ -33,15 +25,30 @@ max-width: 100%;
 word-wrap: break-word;
 }
 
+.contenedor-envoltura{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Germania One", system-ui;
+}
+.contact-form-spacer{
+    display: flex;
+    flex: 35%;
+}
 .contenedor-form{
-    background-color: rgb(7, 1, 14);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Germania One", system-ui;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 30%;
+    flex: 30%;
     text-align: center;
-    border: 3px solid #3a0808;
-    /*border: 3px solid #d85f5f;*/
+    border: 3px solid #4a4646;
+
 }
 
 .formulario-contacto ::placeholder{
@@ -52,8 +59,7 @@ color: #7e08ea;
     padding: 5px 10px;
     background-color: #32323b; 
     border-radius: 10px; /* Bordes redondeados */
-    border: 2px solid #18181a;
-    /*border: 2px solid #d85f5f;*/
+    border: 2px solid #4a4646;
 }
 .formulario-contacto #botonEnv{
 margin-bottom: 20px;

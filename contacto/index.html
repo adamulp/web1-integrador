@@ -1,58 +1,101 @@
 <html lang="es">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-
+        Contacto
     </title>
     <meta charset="utf-8">
     </meta>
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="contacto.css">
 </head>
 
 <body>
-    <div class="cuerpo">
-        <svg id="hamburger-menu" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"
-            tabindex="0">
-            <rect width="40" height="5" y="5" rx="4" fill="black"></rect>
-            <rect width="40" height="5" y="15" rx="4" fill="black"></rect>
-            <rect width="40" height="5" y="25" rx="4" fill="black"></rect>
-        </svg>
-    </div>
-    <div class="contenedor-form">
-        <div class="formulario-contacto">
-            <h2>Formulario de contacto</h2>
-            <form id="frmContacto" class="formulario" onsubmit="return validarFormulario()">
+    <header>
 
-                <br>
-                <label for="nombre"></label><br>
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre:"><br>
-                <br>
-                <label for="apellido"></label><br>
-                <input type="text" name="apellido" id="apellido" placeholder="Apellido:"><br>
-                <br>
-                <label for="mail"></label><br>
-                <input type="text" name="mail" id="mail" placeholder="Email:"><br>
-                <br>
-                <label for="tel"></label><br>
-                <input type="number" name="tel" id="tel" placeholder="Tel:"><br>
-                <br>
-                <label for="edad"></label><br>
-                <input type="number" name="edad" id="edad" min="1" placeholder="Edad:"><br>
-                <br>
-                <label for="mensaje"></label><br>
-                <textarea name="mensaje" id="mensaje" placeholder="Escriba su mensaje aqui..."></textarea><br>
-                <br>
-                <br>
-                <input type="submit" id="botonEnv" value="Enviar">
-                <br />
-            </form>
-            <ul id="listaErrores"></ul>
-            <ul id="listaMensajes"></ul>
-            <br>
-            <br>
+        <div class="topnav">
+
+            <div class="logo-row">
+                <div class="navmenu-spacer-center"></div>
+                <div class="menu-icono">&#8801;</div>
+                <a href="https://adamulp.github.io/web1-integrador/index.html">
+                    <div class="jr-logo">
+                        <img src="../img/JR logo Tam1.ico" alt="JR Games">
+                        <h1>Games</h1>
+                    </div>
+                </a>
+            </div>
+
+
+
+            <div class="nav-menu-text">
+                <ul>
+                    <li class="enlace"><a href="">Inicio</a></li>
+                    <li class="enlace"><a href="">Juegos</a></li>
+                    <li class="enlace"><a href="./contacto/index.html">Contáctenos</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-icon-links">
+                <ul><span>
+                        <li><a href="https://github.com/adamulp/web1-integrador/" target="_blank">
+                                <img src="../img/github-mark-dark.svg" class="iconosH" alt="Nuestro Repo de github"></a>
+                        </li>
+                        <li><a href="https://www.whatsapp.com/" target="_blank"><img src="../img/whatsapp2.ico"
+                                    alt="Icono de whatsapp" class="iconosH"></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="../img/instagram.ico"
+                                    alt="Icono de instagram" class="iconosH"></a></li>
+                        <li><a href="https://www.youtube.com/" target="_blank"><img src="../img/youtube.ico"
+                                    alt="Icono de youtube" class="iconosH"></a></li>
+                    </span>
+                </ul>
+            </div>
+
         </div>
-    </div>
+    </header>
 
+    <!--<div class="contact-form-spacer"></div>-->
+
+    <div class="contenador-envoltura">
+        <div class="contenedor-form">
+            <div class="formulario-contacto">
+                <h2>Formulario de contacto</h2>
+                <form id="frmContacto" class="formulario" onsubmit="return validarFormulario()">
+
+                    <br>
+                    <label for="nombre"></label><br>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre:"><br>
+                    <br>
+                    <label for="apellido"></label><br>
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido:"><br>
+                    <br>
+                    <label for="mail"></label><br>
+                    <input type="text" name="mail" id="mail" placeholder="Email:"><br>
+                    <br>
+                    <label for="tel"></label><br>
+                    <input type="number" name="tel" id="tel" placeholder="Tel:"><br>
+                    <br>
+                    <label for="edad"></label><br>
+                    <input type="number" name="edad" id="edad" min="1" placeholder="Edad:"><br>
+                    <br>
+                    <label for="mensaje"></label><br>
+                    <textarea name="mensaje" id="mensaje" placeholder="Escriba su mensaje aqui..."></textarea><br>
+                    <br>
+                    <br>
+                    <input type="submit" id="botonEnv" value="Enviar">
+                    <br />
+                </form>
+                <ul id="listaErrores"></ul>
+                <ul id="listaMensajes"></ul>
+                <br>
+                <br>
+            </div>
+        </div>
+
+
+    </div>
+    <!--<div class="contact-form-spacer"></div>-->
 
 </body>
 
