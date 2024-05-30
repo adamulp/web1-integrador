@@ -1,233 +1,106 @@
 <html lang="es">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-
+        Contacto
     </title>
     <meta charset="utf-8">
     </meta>
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="contacto.css">
 </head>
 
 <body>
-    <div class="cuerpo">
-        <svg id="hamburger-menu" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"
-            tabindex="0">
-            <rect width="40" height="5" y="5" rx="4" fill="black"></rect>
-            <rect width="40" height="5" y="15" rx="4" fill="black"></rect>
-            <rect width="40" height="5" y="25" rx="4" fill="black"></rect>
-        </svg>
-    </div>
-    <div class="contenedor-form">
-        <div class="formulario-contacto">
-            <h2>Formulario de contacto</h2>
-            <form id="frmContacto" class="formulario" onsubmit="return validarFormulario()">
+    <header>
 
-                <br>
-                <label for="nombre"></label><br>
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre:"><br>
-                <br>
-                <label for="apellido"></label><br>
-                <input type="text" name="apellido" id="apellido" placeholder="Apellido:"><br>
-                <br>
-                <label for="mail"></label><br>
-                <input type="text" name="mail" id="mail" placeholder="Email:"><br>
-                <br>
-                <label for="tel"></label><br>
-                <input type="number" name="tel" id="tel" placeholder="Tel:"><br>
-                <br>
-                <label for="edad"></label><br>
-                <input type="number" name="edad" id="edad" min="1" placeholder="Edad:"><br>
-                <br>
-                <label for="mensaje"></label><br>
-                <textarea name="mensaje" id="mensaje" placeholder="Escriba su mensaje aqui..."></textarea><br>
-                <br>
-                <br>
-                <input type="submit" id="botonEnv" value="Enviar">
-                <br />
-            </form>
-            <ul id="listaErrores"></ul>
-            <ul id="listaMensajes"></ul>
-            <br>
-            <br>
+        <div class="topnav">
+
+            <div class="logo-row">
+                <div class="navmenu-spacer-center"></div>
+                <div class="menu-icono">&#8801;</div>
+                <a href="../index.html">
+                    <div class="jr-logo">
+                        <img src="../img/JR logo Tam1.ico" alt="JR Games">
+                        <h1>Games</h1>
+                    </div>
+                </a>
+            </div>
+
+
+
+            <div class="nav-menu-text">
+                <ul>
+                    <li class="enlace"><a href="../index.html">Inicio</a></li>
+                    <li class="enlace"><a href="../index.html">Juegos</a></li>
+                    <li class="enlace-placeholder">Contáctenos</li>
+                </ul>
+            </div>
+
+            <div class="nav-icon-links">
+                <ul><span>
+                        <li><a href="https://github.com/adamulp/web1-integrador/" target="_blank">
+                                <img src="../img/github-mark-dark.svg" class="iconosH" alt="Nuestro Repo de github"></a>
+                        </li>
+                        <li><a href="https://www.whatsapp.com/" target="_blank"><img src="../img/whatsapp2.ico"
+                                    alt="Icono de whatsapp" class="iconosH"></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="../img/instagram.ico"
+                                    alt="Icono de instagram" class="iconosH"></a></li>
+                        <li><a href="https://www.youtube.com/" target="_blank"><img src="../img/youtube.ico"
+                                    alt="Icono de youtube" class="iconosH"></a></li>
+                    </span>
+                </ul>
+            </div>
+
         </div>
-    </div>
+    </header>
 
+    <!--<div class="contact-form-spacer"></div>-->
+
+    <div class="contenador-envoltura">
+        <div class="contenedor-form">
+            <div class="formulario-contacto">
+                <h2>Formulario de contacto</h2>
+                <form id="frmContacto" class="formulario" onsubmit="return validarFormulario()">
+                    <br>
+                    <label for="nombre" class="etiquetaError" id="nombreError"></label><br>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre:"><br>
+                    <br>
+                    <label for="apellido" class="etiquetaError" id="apellidoError"></label><br>
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido:"><br>
+                    <br>
+                    <label for="mail" class="etiquetaError" id="mailError"></label><br>
+                    <input type="text" name="mail" id="mail" placeholder="Email:"><br>
+                    <br>
+                    <label for="tel" class="etiquetaError" id="telError"></label><br>
+                    <input type="number" name="tel" id="tel" placeholder="Tel:"><br>
+                    <br>
+                    <label for="edad" class="etiquetaError" id="edadError"></label><br>
+                    <input type="number" name="edad" id="edad" min="1" placeholder="Edad:"><br>
+                    <br>
+                    <label for="mensaje" class="etiquetaError" id="mensajeError"></label><br>
+                    <textarea name="mensaje" id="mensaje" placeholder="Escriba su mensaje aqui..."></textarea><br>
+                    <br>
+                    <br>
+                    <input type="submit" class="botonEnv" value="Enviar">
+                    <br />
+                </form>
+                <ul id="listaErrores"></ul>
+                <ul id="listaMensajes"></ul>
+                <br>
+                <br>
+            </div>
+        </div>
+
+
+    </div>
+    <!--<div class="contact-form-spacer"></div>-->
 
 </body>
 
 <script src="test.js"></script>
+<script src="contacto.js"></script>
+<script src="../js/menu-toggle.js"></script>
 <!---->
-
-<script>
-
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-
-    hamburgerMenu.addEventListener('blur', () => {
-        hamburgerMenu.querySelectorAll('rect').forEach(rect => rect.setAttribute('fill', 'black'));
-    });
-
-    let txtNombre = document.getElementById("nombre");
-    let txtApellido = document.getElementById("apellido");
-    let txtTel = document.getElementById("tel");
-    let txtEdad = document.getElementById("edad");
-    let listaErrores = document.getElementById("listaErrores");
-    let listaMensajes = document.getElementById("listaMensajes");
-
-    function validarFormulario() {
-        listaErrores.innerHTML = "";
-        listaMensajes.innerHTML = "";
-        txtNombre.classList.remove("error");
-        txtTel.classList.remove("error");
-        let errores = [];
-        let regex_tel = /^[1-9]\d{9}$/;
-
-        let nombre = txtNombre.value.trim();
-        if (nombre.length == 0) {
-            errores.push("Falta el nombre");
-            txtNombre.classList.add("error");
-        } else if (nombre.length > 99) {
-            errores.push("Nombre muy largo!");
-            txtNombre.classList.add("error");
-        }
-
-        let apellido = txtApellido.value.trim();
-        if (apellido.length == 0) {
-            errores.push("Falta el apellido");
-            txtNombre.classList.add("error");
-        } else if (apellido.length > 99) {
-            errores.push("Apellido muy largo!");
-            txtNombre.classList.add("error");
-        }
-
-        if (txtTel.value.length === 0) {
-            errores.push("Falta el teléfono...");
-            txtTel.classList.add("error");
-        }
-
-        if (txtTel.value.length > 10) {
-            errores.push("Teléfono muy largo");
-            txtTel.classList.add("error");
-        }
-        if (txtTel.value.length > 0 && !regex_tel.test(txtTel.value)) {
-            errores.push("Teléfono inválido");
-            txtTel.classList.add("error");
-        }
-
-        if (txtEdad.value.length === 0) {
-            errores.push("¡Falta informarnos de tu edad!");
-            txtTel.classList.add("error");
-        } else {
-            if (parseInt(txtEdad.value) < 18) {
-                errores.push("No son juegos para niños :(");
-                txtTel.classList.add("error");
-            }
-        }
-
-        for (let err of errores) {
-            let li = document.createElement("li");
-            li.innerHTML = err;
-            listaErrores.appendChild(li);
-        }
-        if (errores.length == 0) {
-            let li = document.createElement("li");
-            let anchor = document.createElement('a');
-            anchor.href = '../encuesta.html';
-            anchor.textContent = 'Realizar una encuesta';
-            li.appendChild(anchor);
-            li.id = 'enlace-encuesta';
-
-            /*
-            if (txtTel.value.length > 0) {
-                li.innerHTML = `Hola ${nombre}, bienvenido`;
-            } else {
-                li.innerHTML = `Hola, bienvenido`;
-            }
-            */
-            listaMensajes.appendChild(li);
-            //document.forms[0].reset();
-            //encuestaOnSubmit();
-            return false; // return true para enviar el form;
-        }
-
-        return false;
-    }
-
-    function encuestaOnSubmit() {
-        const decision = document.querySelector('input[name="decision"]:checked').value;
-        if (decision === 'si') {
-            window.location.href = 'encuesta.html'; // Página de la encuesta
-        } else {
-            window.location.href = 'page.html'; // Página principal
-        }
-    }
-
-    //document.getElementById('botonEnv').addEventListener('click', enviarFormulario);
-
-    function enviarFormulario() {
-        validarFormulario();
-        //document.forms[0].reset();
-        //encuestaOnSubmit();
-        return false; /* No enviar el formulario */
-    }
-
-    function chequearNombre(texto) {
-
-        let textoNormalizado = "";
-        let regex_abc_ansi = /^[A-Za-z]+$/;
-
-        for (let i = 0; i < texto.length; i++) {
-            let letra = quitarTilde(texto[i]);
-            textoNormalizado += letra;
-        }
-
-        if (regex_abc_ansi.test(textoNormalizado)) {
-            console.log("El texto solo contiene caracteres del abecedario romano.");
-            return true;
-        } else {
-            console.log("El texto contiene caracteres que no son del abecedario romano.");
-            return false;
-        }
-
-    }
-
-    const normalizarTexto = str =>
-        str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-
-    function quitarTilde(caracter) {
-        switch (caracter) {
-            case "á":
-                caracter = "a";
-                break;
-            case "é":
-                caracter = "e";
-                break;
-            case "í":
-                caracter = "i";
-                break;
-
-            case "ó":
-                caracter = "o";
-                break;
-
-            case "ú":
-                caracter = "u";
-                break;
-
-            case "ü":
-                caracter = "u";
-                break;
-
-            case "ñ":
-                caracter = "n";
-                break;
-
-            default:
-                normalizarTexto(caracter);
-                break;
-        }
-
-    }
-</script>
 
 </html>
