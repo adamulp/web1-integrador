@@ -68,7 +68,7 @@
                     <input type="text" name="apellido" id="apellido" placeholder="Apellido:"><br>
                     <br>
                     <label for="mail" class="etiquetaError" id="mailError"></label><br>
-                    <input type="text" name="mail" id="mail" placeholder="Email:"><br>
+                    <input type="text" name="mail" id="mail" placeholder="Email:" onfocus="cambiarPlaceholder(this)" onblur="restaurarPlaceholder(this)"><br>
                     <br>
                     <label for="tel" class="etiquetaError" id="telError"></label><br>
                     <input type="number" name="tel" id="tel" placeholder="Tel:"><br>
@@ -80,7 +80,7 @@
                     <textarea name="mensaje" id="mensaje" placeholder="Escriba su mensaje aqui..."></textarea><br>
                     <br>
                     <br>
-                    <input type="submit" class="botonEnv" value="Enviar">
+                    <input type="submit" class="botonEnv" value="Enviar" >
                     <br />
                 </form>
                 <ul id="listaErrores"></ul>
@@ -101,7 +101,16 @@
     menuIcon.addEventListener('click', () => {
         menuItems.classList.toggle('show');
     });
+
+        function cambiarPlaceholder(input) {
+            input.placeholder = 'email@example.com';
+        }
+        function restaurarPlaceholder(input) {
+            input.placeholder = 'Email';
+        }
+
 </script>
+
 
 <script src="test.js"></script>
 <script src="contacto.js"></script>
