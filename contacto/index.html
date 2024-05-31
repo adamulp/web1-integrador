@@ -7,7 +7,7 @@
     </title>
     <meta charset="utf-8">
     </meta>
-    <link rel="stylesheet" type="text/css" href="../juegos/estiloHeader.css">
+    <link rel="stylesheet" type="text/css" href="estiloHeaderContact.css">
     <link rel="stylesheet" type="text/css" href="contacto.css">
 </head>
 
@@ -95,6 +95,14 @@
     <!--<div class="contact-form-spacer"></div>-->
 
 </body>
+<script>
+    const menuIcon = document.querySelector('.menu-icono');
+    const menuItems = document.querySelector('.menu-items');
+
+    menuIcon.addEventListener('click', () => {
+        menuItems.classList.toggle('show');
+    });
+</script>
 
 <script src="test.js"></script>
 <script src="contacto.js"></script>
