@@ -66,43 +66,58 @@ function validarFormulario() {
         errores.push("Falta el nombre");
         txtNombre.classList.add("error");
         setErrorLabel("nombreError", "Nombre");
+
+
     } else if (nombre.length > 99) {
         errores.push("Nombre muy largo!");
         txtNombre.classList.add("error");
         setErrorLabel("nombreError", "Nombre");
+
     }
 
     let apellido = txtApellido.value.trim();
     if (apellido.length == 0) {
         errores.push("Falta el apellido");
         txtApellido.classList.add("error");
+
+
     } else if (apellido.length > 99) {
         errores.push("Apellido muy largo!");
         txtApellido.classList.add("error");
         setErrorLabel("apellidoError", "Apellido");
+
     }
 
     if (txtTel.value.length === 0) {
         errores.push("Falta el teléfono...");
         txtTel.classList.add("error");
+
+
     }
 
     if (txtTel.value.length > 10) {
         errores.push("Teléfono muy largo");
         txtTel.classList.add("error");
+
     }
     if (txtTel.value.length > 0 && !regex_tel.test(txtTel.value)) {
         errores.push("Teléfono inválido");
         txtTel.classList.add("error");
+
+
     }
 
     if (txtEdad.value.length === 0) {
         errores.push("¡Falta informarnos de tu edad!");
         txtEdad.classList.add("error");
+
+
     } else {
         if (parseInt(txtEdad.value) < 18) {
             errores.push("No son juegos para niños :(");
             txtEdad.classList.add("error");
+
+
         }
     }
 
@@ -135,6 +150,9 @@ function validarFormulario() {
 
     return false;
 }
+
+
+
 
 function encuestaOnSubmit() {
     const decision = document.querySelector('input[name="decision"]:checked').value;

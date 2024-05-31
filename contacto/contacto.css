@@ -92,8 +92,10 @@ font-size: 20px;
 cursor: pointer;
 }
 
+input{
+border-radius: 10px;
 
-
+}
 
 .formulario-contacto #botonEnv:hover{
     transform: translateY(-2px); /*movimiento del boton cuando pasa el cursor por encima*/
@@ -108,4 +110,12 @@ cursor: pointer;
 }
 .etiquetaError{
     color:red;
+    font-size: 15px;
+    margin-top: 3px;
+}
+.errorMensaje {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px; /* Espacio entre el input y el mensaje de error */
+    display: block; /* Convertir el mensaje de error en un bloque */
 }
