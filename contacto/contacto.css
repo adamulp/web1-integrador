@@ -108,6 +108,8 @@ cursor: pointer;
 }
 #listaErrores{
     color: red;
+    display: flex;
+    flex-direction: column;
 }
 .etiquetaError{
     color:red;

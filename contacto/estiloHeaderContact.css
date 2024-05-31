@@ -28,12 +28,12 @@ header {
     align-items: center;
     margin-right: 20px;
 }
-ul{
+/*ul{
     list-style-type: none;
     padding: 0px;
     margin: 0px;
     display: flex;
-}
+}*/
 a {
     text-decoration: none;
     color: #b8aeae;
