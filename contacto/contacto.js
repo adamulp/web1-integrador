@@ -79,7 +79,7 @@ function validarFormulario() {
     if (apellido.length == 0) {
         errores.push("Falta el apellido");
         txtApellido.classList.add("error");
-
+        setErrorLabel("apellidoError", "Apellido");
 
     } else if (apellido.length > 99) {
         errores.push("Apellido muy largo!");
@@ -91,32 +91,32 @@ function validarFormulario() {
     if (txtTel.value.length === 0) {
         errores.push("Falta el teléfono...");
         txtTel.classList.add("error");
-
+        setErrorLabel("telError", "Tel");
 
     }
 
     if (txtTel.value.length > 10) {
         errores.push("Teléfono muy largo");
         txtTel.classList.add("error");
-
+        setErrorLabel("telError", "Tel");
     }
     if (txtTel.value.length > 0 && !regex_tel.test(txtTel.value)) {
         errores.push("Teléfono inválido");
         txtTel.classList.add("error");
-
+        setErrorLabel("telError", "Tel");
 
     }
 
     if (txtEdad.value.length === 0) {
         errores.push("¡Falta informarnos de tu edad!");
         txtEdad.classList.add("error");
-
+        setErrorLabel("edadError", "Edad");
 
     } else {
         if (parseInt(txtEdad.value) < 18) {
             errores.push("No son juegos para niños :(");
             txtEdad.classList.add("error");
-
+            setErrorLabel("edadError", "Edad");
 
         }
     }
