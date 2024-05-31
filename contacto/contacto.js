@@ -79,6 +79,7 @@ function validarFormulario() {
     } else if (apellido.length > 99) {
         errores.push("Apellido muy largo!");
         txtApellido.classList.add("error");
+        setErrorLabel("apellidoError", "Apellido");
     }
 
     if (txtTel.value.length === 0) {
