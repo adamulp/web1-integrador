@@ -17,3 +17,50 @@ body, html {
     margin: 20px auto;
     min-height: calc(100vh - 40px);
 }
+.contenedorInterno {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 20px; 
+    padding: 10px;
+}
+.contenedorIzquierdo{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(228, 222, 222);
+    padding: 10px;
+    width: 100px;
+}
+.contImg{
+    display: flex;
+    border-radius: 35px;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-bottom: auto;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.contenedorIzquierdo{
+    display: flex;
+    background-color: #2c2c2c;
+    margin-top: 20px;
+    width: 180px;
+    height: 620px;
+    border-radius: 10px;
+    border: 2px solid orange;
+    color: salmon;
+    text-align: center;
+    
+}
+
+.cont{
+    display: flex;
+    flex-direction: column;
+    color: rgb(223, 208, 208);
+    border-radius: 10px;
+    border: 2px solid orange;
+    padding: 25px;
+    text-align: center;
+    background-color: #2c2c2c;
+
+}
