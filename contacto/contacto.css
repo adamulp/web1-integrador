@@ -13,7 +13,12 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(184, 83, 83);
+}
 input{
     width: 50%;
     padding: 5px;
@@ -29,16 +34,8 @@ height: 100px;
 font-family: "Jersey 15", system-ui;
 font-size: 20px;
 }
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    }
-li {
-    margin-left: 20px;
-}
 
-h2{
+.formulario-contacto h2{
 color: #d6d5ec;
 margin-bottom: 20px;
 font-size: 50px;
@@ -51,14 +48,6 @@ word-wrap: break-word;
     border: 2px solid red;
 }
 
-.contenedor-envoltura{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: "Germania One", system-ui;
-}
 .contact-form-spacer{
     display: flex;
     flex: 35%;
@@ -74,6 +63,7 @@ word-wrap: break-word;
     flex: 30%;
     text-align: center;
     border: 3px solid #4a4646;
+   
 
 }
 
@@ -85,7 +75,9 @@ color: #7e08ea;
     padding: 5px 10px;
     background-color: #32323b; 
     border-radius: 10px; /* Bordes redondeados */
-    border: 2px solid #4a4646;
+    border: 2px solid black;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0.2);
+    
 }
 .formulario-contacto #botonEnv{
 margin-bottom: 20px;
@@ -105,13 +97,6 @@ cursor: pointer;
 
 .formulario-contacto #botonEnv:hover{
     transform: translateY(-2px); /*movimiento del boton cuando pasa el cursor por encima*/
-}
-#hamburger-menu {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    cursor: pointer;
-    outline: none; /*para que no se vea el marco cuando se hace foco en el hamb. menu*/
 }
 #enlace-encuesta{
     background-color: aliceblue;
