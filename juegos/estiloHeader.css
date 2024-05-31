@@ -1,0 +1,128 @@
+header {
+    background-color: #333;
+    color: white;
+    padding: 1px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+.HeaderIzquierdo{
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+    margin-right: 100px;
+    
+}
+.HeaderDerecho{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+}
+a {
+    text-decoration: none;
+    color: #b8aeae;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+li {
+    display: inline-block;
+}
+.enlace{
+    margin: 20px;
+    font-size: 20px;
+}
+.iconosH {
+    margin: 7px;
+    height: 45px;
+    width: auto;
+    padding: 5px;
+}
+
+h1{
+    margin: 0;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.iconosH:hover{
+    background-color: rgb(156, 48, 48);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.enlace:hover{
+    background-color: rgb(156, 48, 48);
+    border-radius: 10%;
+    cursor: pointer;
+}
+.menu-icono:hover{
+    cursor: pointer;
+    background-color: rgb(156, 48, 48);
+}
+.menu-enlaces:hover{
+    cursor: pointer;
+    background-color: rgb(156, 48, 48);
+    border-radius: 12%;
+}
+.logo-menu:hover{
+    background-color: rgb(156, 48, 48);
+    border-radius: 12%;
+
+}
+
+.menu-icono {
+    display: none;
+    font-size: 25px;
+    margin-right: 40px;
+    padding: 4px;
+    border-radius: 50%;
+}
+.menu-items {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #333;
+    padding: 20px;
+    z-index: 3;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    display: none;
+    overflow-y: auto;
+}
+.menu-items.show {
+    left: 0;
+    display: block;
+}
+.menu-items ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 25%;
+}
+.menu-items ul li {
+    margin-bottom: 20px;
+}
+.menu-items ul li a {
+    color: white;
+    font-size: 20px;
+}
+.menu-items h2 {
+margin-top: 0;
+margin-bottom: 20px;
+width: 100%;
+text-align: center;
