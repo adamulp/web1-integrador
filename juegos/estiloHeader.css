@@ -154,19 +154,19 @@ text-align: center;
 
 
             .menu-items::-webkit-scrollbar {
-                width: 12px; /* Ancho de la barra de desplazamiento */
+                width: 12px;
             }
             
             .menu-items::-webkit-scrollbar-track {
-                background: #f1f1f1; /* Color de fondo de la barra de desplazamiento */
+                background: #f1f1f1;
             }
             
             .menu-items::-webkit-scrollbar-thumb {
-                background: #888; /* Color del indicador de la barra de desplazamiento */
+                background: #888;
             }
             
             .menu-items::-webkit-scrollbar-thumb:hover {
-                background: #555; /* Color del indicador de la barra de desplazamiento cuando se pasa el mouse */
+                background: #555;
             }
 
             
