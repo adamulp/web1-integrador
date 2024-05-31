@@ -126,3 +126,22 @@ margin-top: 0;
 margin-bottom: 20px;
 width: 100%;
 text-align: center;
+}
+        /* Mostrar el menu de hamburgesa solo cuando se llega a los px */
+        @media screen and (max-width: 768px) {
+            .menu-icono {
+                display: block; /* Bloquear el icono hasta que se llegue al tamaño */
+            }
+            .HeaderDerecho, .HeaderIzquierdo {
+               display: none; /* Resetear el margen */
+            }
+            .menu-items{
+                display: none;
+            }}
+            .menu-enlaces{
+                padding: 5px;
+                border-radius: 5%;
+            }
+            .menu-enlaces h1{
+                padding: 12px;
+            }
