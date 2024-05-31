@@ -13,17 +13,20 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-body, html {
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: rgb(184, 83, 83);
+    align-items: center;
+    justify-content: center;
 }
 input{
     width: 50%;
     padding: 5px;
     font-family: "Jersey 15", system-ui;
     font-size: 20px;
+    border-radius: 10px;
     
 }
 
@@ -50,21 +53,18 @@ word-wrap: break-word;
 
 .contact-form-spacer{
     display: flex;
-    flex: 35%;
 }
 .contenedor-form{
     display: flex;
+    text-align: center;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    height: auto;
+    width: 40%;
+    margin: 30px;
     font-family: "Germania One", system-ui;
     padding: 20px;
-    flex: 30%;
-    text-align: center;
-    border: 3px solid #4a4646;
-   
-
+    border-radius: 10px;
+    margin-left: 30%;
 }
 
 .formulario-contacto ::placeholder{
@@ -74,7 +74,7 @@ color: #7e08ea;
 .formulario-contacto{
     padding: 5px 10px;
     background-color: #32323b; 
-    border-radius: 10px; /* Bordes redondeados */
+    border-radius: 10px;
     border: 2px solid black;
     box-shadow: 0px 2px 4px rgba(0, 0, 0.2);
     
@@ -92,13 +92,8 @@ font-size: 20px;
 cursor: pointer;
 }
 
-input{
-border-radius: 10px;
-
-}
-
 .formulario-contacto #botonEnv:hover{
-    transform: translateY(-2px); /*movimiento del boton cuando pasa el cursor por encima*/
+    transform: translateY(-2px); 
 }
 #enlace-encuesta{
     background-color: aliceblue;
@@ -116,6 +111,6 @@ border-radius: 10px;
 .errorMensaje {
     color: red;
     font-size: 14px;
-    margin-top: 5px; /* Espacio entre el input y el mensaje de error */
-    display: block; /* Convertir el mensaje de error en un bloque */
+    margin-top: 5px;
+    display: block;
 }
