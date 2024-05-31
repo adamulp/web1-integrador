@@ -40,6 +40,19 @@ function actualizarImagen() {
 
     quitarEnlace("demoP");
     agregarEnlace("demoP", svg_path);
+    
+    imagenIzquierda.classList.add('force-reflow');
+        setTimeout(() => {
+            imagenIzquierda.classList.remove('force-reflow');
+        }, 0);
+    imagenCentro.classList.add('force-reflow');
+    setTimeout(() => {
+        imagenCentro.classList.remove('force-reflow');
+    }, 0);
+    imagenDerecha.classList.add('force-reflow');
+    setTimeout(() => {
+        imagenDerecha.classList.remove('force-reflow');
+    }, 0);
 }
 
 actualizarImagen();

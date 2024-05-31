@@ -1,3 +1,7 @@
+.force-reflow {
+    display: none;
+}
+
 .cuerpo {
     display: flex;
     flex-direction: column;
