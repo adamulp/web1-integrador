@@ -57,24 +57,24 @@
     max-height: 100%;
     border-radius: 10px;
 }
-#demoIz,
-#demoDr {
+#ImgIz,
+#ImgDr {
     width: 10%;
     height: 60%;
     opacity: 0.5;
     cursor: pointer;
     border-radius: 10%;
 }
-#demoIz {
+#ImgIz {
     left: 0;
     border-radius: 10%;
 }
 
-#demoDr {
+#ImgDr {
     right: 0;
     border-radius: 10%;
 }
-#demoP{
+#ImgP{
     width: 300px;
     height: 300px;
     cursor: pointer;
@@ -128,20 +128,20 @@
     .alinearAlCentro{
         width:100%;
     }
-    #demoDr{
+    #ImgDr{
         width:20%;
     }
-    #demoIz{
+    #ImgIz{
         width:20%;
     }
 
 }
 
 @media screen and (max-width: 600px) {
-    #demoDr{
+    #ImgDr{
         display: none;
     }
-    #demoIz{
+    #ImgIz{
         display: none;
     }
 }
