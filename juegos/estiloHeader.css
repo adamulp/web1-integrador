@@ -81,6 +81,12 @@ h1{
 .logo-menu:hover{
     background-color: rgb(156, 48, 48);
     border-radius: 12%;
+}
+.redesSociales{
+margin-top: 100px;
+}
+.enlaces-menu-desplegable{
+margin-top: 70px;
 
 }
 
@@ -145,3 +151,22 @@ text-align: center;
             .menu-enlaces h1{
                 padding: 12px;
             }
+
+
+            .menu-items::-webkit-scrollbar {
+                width: 12px; /* Ancho de la barra de desplazamiento */
+            }
+            
+            .menu-items::-webkit-scrollbar-track {
+                background: #f1f1f1; /* Color de fondo de la barra de desplazamiento */
+            }
+            
+            .menu-items::-webkit-scrollbar-thumb {
+                background: #888; /* Color del indicador de la barra de desplazamiento */
+            }
+            
+            .menu-items::-webkit-scrollbar-thumb:hover {
+                background: #555; /* Color del indicador de la barra de desplazamiento cuando se pasa el mouse */
+            }
+
+            
