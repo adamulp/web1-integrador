@@ -60,26 +60,26 @@ h1{
     margin-left: 20px;
 }
 .iconosH:hover{
-    background-color: rgb(156, 48, 48);
+    background-color: rgb(26, 85, 196);
     border-radius: 50%;
     cursor: pointer;
 }
 .enlace:hover{
-    background-color: rgb(156, 48, 48);
+    background-color: rgb(26, 85, 196);
     border-radius: 10%;
     cursor: pointer;
 }
 .menu-icono:hover{
     cursor: pointer;
-    background-color: rgb(156, 48, 48);
+    background-color: rgb(26, 85, 196);
 }
 .menu-enlaces:hover{
     cursor: pointer;
-    background-color: rgb(156, 48, 48);
+    background-color: rgb(26, 85, 196);
     border-radius: 12%;
 }
 .logo-menu:hover{
-    background-color: rgb(156, 48, 48);
+    background-color: rgb(26, 85, 196);
     border-radius: 12%;
 }
 .redesSociales{
