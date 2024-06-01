@@ -74,6 +74,11 @@ word-wrap: break-word;
     
 }
 
+#datosEnviados{
+    display: none;
+    color: white;
+}
+
 .formulario-contacto ::placeholder{
 color: #7e08ea;
 opacity: 70%;
@@ -108,6 +113,8 @@ cursor: pointer;
 }
 #listaErrores{
     color: red;
+    display: flex;
+    flex-direction: column;
 }
 .etiquetaError{
     color:red;
