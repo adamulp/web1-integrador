@@ -4,7 +4,26 @@ let txtTel = document.getElementById("tel");
 let txtEdad = document.getElementById("edad");
 let listaErrores = document.getElementById("listaErrores");
 let listaMensajes = document.getElementById("listaMensajes");
+let txtMail = document.getElementById("mail");
 
+
+
+
+function quitarBordesRojos(){
+    let form = document.getElementById('frmContacto');
+    let inputs = form.getElementsByTagName('input');
+
+    for (let i = 0; i < inputs.length; i++) {
+        let input = inputs[i];
+        input.classList.remove('error');
+
+    }
+}
+
+function borrarFormCampos(){
+    let form = document.getElementById('formulario');
+    form.remove();
+}
 
 function disableFormInputs() {
     let form = document.getElementById('frmContacto');
@@ -16,12 +35,37 @@ function disableFormInputs() {
         input.disabled = true;
 
     }
+    let mensaje = document.getElementById('mensaje');
+    mensaje.disabled = true;
 }
 
 function setErrorLabel(idEtiqueta, textoEtiqueta){
     if(idEtiqueta){
         let etiqueta = document.getElementById(idEtiqueta);
         etiqueta.textContent = textoEtiqueta;
+    }else{
+        console.log("El campo no existe");
+    }
+}
+
+function borrarFormLabels() {
+    let form = document.getElementById('frmContacto');
+    let etiquetas = form.getElementsByClassName("etiquetaError");
+
+    for (let i = 0; i < etiquetas.length; i++) {
+        let etiqueta = etiquetas[i];
+        etiqueta.remove();
+    }
+}
+
+function borrarLabel(campo){
+    if(campo){
+        //let etiqueta = document.querySelector('label[for="' + campo.id + '"]');
+        let etiqueta = document.getElementsByClassName(campo.id);
+                
+        if (etiqueta) {
+            etiqueta.remove();
+        }
     }else{
         console.log("El campo no existe");
     }
@@ -55,9 +99,23 @@ function validarFormulario() {
     listaErrores.innerHTML = "";
     listaMensajes.innerHTML = "";
     txtNombre.classList.remove("error");
+    txtApellido.classList.remove("error");
     txtTel.classList.remove("error");
+    txtEdad.classList.remove("error");
+
     quitarFormLabels();
+    quitarBordesRojos();
+    
     let errores = [];
+
+    let email = txtMail.value.trim();
+    let regex_mail = /^[a-zA-Z][a-zA-Z0-9]*@[a-zA-Z][a-zA-Z0-9]*\.[a-zA-Z]{1,5}\.?[a-zA-Z]{1,5}$/;
+    if(!regex_mail.test(email)){
+        errores.push("Email inválido :(");
+        txtMail.classList.add("error");
+        setErrorLabel("mailError", "Mail");
+    }
+
     let regex_tel = /^[1-9]\d{9}$/;
 //setErrorLabel(campo, textoEtiqueta)
     let nombre = txtNombre.value.trim();
@@ -88,26 +146,28 @@ function validarFormulario() {
 
     }
 
-    if (txtTel.value.length === 0) {
+    let telefono = txtTel.value.trim();
+    if (telefono.length === 0) {
         errores.push("Falta el teléfono...");
         txtTel.classList.add("error");
         setErrorLabel("telError", "Tel");
 
     }
 
-    if (txtTel.value.length > 10) {
+    if (telefono.length > 10) {
         errores.push("Teléfono muy largo");
         txtTel.classList.add("error");
         setErrorLabel("telError", "Tel");
     }
-    if (txtTel.value.length > 0 && !regex_tel.test(txtTel.value)) {
-        errores.push("Teléfono inválido");
+    if (telefono.length > 0 && !regex_tel.test(telefono)) {
+        errores.push("Para el teléfono deben ser 10 dígitos");
         txtTel.classList.add("error");
-        setErrorLabel("telError", "Tel");
+        setErrorLabel("telError", "Telefóno");
 
     }
 
-    if (txtEdad.value.length === 0) {
+    let edad = txtEdad.value.trim();
+    if (edad.length === 0) {
         errores.push("¡Falta informarnos de tu edad!");
         txtEdad.classList.add("error");
         setErrorLabel("edadError", "Edad");
@@ -128,12 +188,25 @@ function validarFormulario() {
     }
     if (errores.length == 0) {
         disableFormInputs();
-        let li = document.createElement("li");
-        let anchor = document.createElement('a');
+          
+        let divDatos = document.getElementById("datosEnviados");
+        
+        let contenidoP = document.getElementById("contenidoEnviado");
+        let contenido = "Hola " + nombre + " " + apellido + ", gracias por";
+        contenido = contenido + " contactarte con nosotros, en breve estaremos";
+        contenido += " en contacto contigo por medio de tu teléfono, ";
+        contenido += telefono + " o si no, por el mail, " + email;
+        contenido += " ya que sabemos que tu edad es " + edad;
+
+        contenidoP.innerHTML = contenido;
+        divDatos.style.display = 'flex';
+        borrarFormCampos();
+        /*
         anchor.href = '../encuesta.html';
         anchor.textContent = 'Realizar una encuesta';
         li.appendChild(anchor);
         li.id = 'enlace-encuesta';
+        */
 
         /*
         if (txtTel.value.length > 0) {
@@ -141,8 +214,9 @@ function validarFormulario() {
         } else {
             li.innerHTML = `Hola, bienvenido`;
         }
-        */
         listaMensajes.appendChild(li);
+        */
+        
         //document.forms[0].reset();
         //encuestaOnSubmit();
         return false; // return true para enviar el form;

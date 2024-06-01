@@ -74,6 +74,11 @@ word-wrap: break-word;
     
 }
 
+#datosEnviados{
+    display: none;
+    color: white;
+}
+
 .formulario-contacto ::placeholder{
 color: #7e08ea;
 opacity: 70%;
