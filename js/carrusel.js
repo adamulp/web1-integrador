@@ -1,6 +1,6 @@
-let imagenIzquierda = document.getElementById("demoIz");
-let imagenCentro = document.getElementById("demoP");
-let imagenDerecha = document.getElementById("demoDr");
+let imagenIzquierda = document.getElementById("ImgIz");
+let imagenCentro = document.getElementById("ImgP");
+let imagenDerecha = document.getElementById("ImgDr");
 
 let dirImagen = "./img/";
 let imagenes = [
@@ -38,8 +38,8 @@ function actualizarImagen() {
     imagenCentro.src = dirImagen + imagenes[indiceActual];
     imagenDerecha.src = dirImagen + imagenes[indiceSig];
 
-    quitarEnlace("demoP");
-    agregarEnlace("demoP", svg_path);
+    quitarEnlace("ImgP");
+    agregarEnlace("ImgP", svg_path);
     
     imagenIzquierda.classList.add('force-reflow');
         setTimeout(() => {
