@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+
+h1, h3{
+    font-family: "Jersey 15", system-ui;
+    color: white;
+}
+
+p{
+    font-family: "Germania One", system-ui;
+}
+
 body, html {
     margin: 0;
     padding: 0;
